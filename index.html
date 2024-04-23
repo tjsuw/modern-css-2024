@@ -1,18 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Front-End Technologies - May 2024 presentation</title>
+		<title>A guided tour of cutting-edge CSS you can use now &mdash; FET May 2024 presentation</title>
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./style.css">
 		<link rel="icon" href="./favicon.ico" type="image/x-icon">
 	</head>
 	<body>
-		<main>
-			<h1>FET May 2024 presentation</h1>
-			<p>Publish me to staff.washington.edu/tjshelt/fet2024/</p>
+		<header>
+			<nav class="navbar navbar-expand-lg has-husky-purple-background-color">
+				<div class="container">
+					<a class="navbar-brand has-white-color" href="index.html">FET May 2024</a>
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link has-white-color active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="resources.html">Resources</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main class="container">
+			<h1>A guided tour of cutting-edge CSS you can use now</h1>
+			<p>Welcome to a tour of cutting-edge CSS you can use now. These examples were inspired by this article: 5 CSS snippets every front-end developer should know in 2024. Front-end web developer Teri Shelton, in collaboration with designer Andy Krikawa, put together these examples.</p>
+
+			<p>At the May 19, 2024 Front-End Tech Community of Practice, we'll demonstrate how they work and share some ideas on use cases. There's so much to cover: from subgrid to container queries and :has() to color-scheme…and more! It's going to be like a guided tour of favorite sites: stop, look at the view, snap a photo (screenshot!), ask a question, hop back on the bus.</p>
+
+			<p><em>Publish me to staff.washington.edu/tjshelt/fet2024/</em></p>
+
+			<p>TODO: add block W logo to header</p>
+
+			<p>TODO: install <code>prismjs</code> for syntax highlighting</p>
+
+			<h2>Table of Contents</h2>
+			<ol>
+				<h3>Super quick hits</h3>
+					<li>Balance headlines/text</li>
+					<li>aspect ratio</li>
+					<li>object fit</li>
+					<li>margin inline</li>
+					<li>text-underline-offset</li>
+					<li>outline offset</li>
+					<li>Scroll margin top/bottom</li>
+					<li>fit content width</li>
+					<li>color scheme</li>
+					<li>accent color</li>
+				<h3>Middle ground</h3>
+					<li>CSS nesting</li>
+					<li><code>:has()</code></li>
+				<h3>Bigger, meatier</h3>
+					<li>subgrid</li>
+					<li>container queries &amp; units</li>
+			</ol>
+
+			<h2>Balance headlines &amp; text</h2>
+			<div class="container">
+				<div class="row gap">
+					<div class="col example teal">
+						<p class="h1">This is a sample headline that is completely normal - nothing to see here</p>
+						<p>Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+					</div>
+					<div class="col example teal">
+						<p class="h1 balance">This is a sample headline with balanced text wrap set to balance</p>
+						<p class="balance">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+					</div>
+					<div class="col example teal">
+						<p class="h1 pretty">This is a sample headline with balanced text wrap set to pretty</p>
+						<p class="pretty">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+					</div>
+				</div>
+			</div>
+
+			<h2>Aspect ratio - finish</h2>
+			<div class="container">
+				<div class="row gap">
+					<div class="col example pink ar-16-4">
+						<img src="https://placehold.co/400x300" alt="">
+					</div>
+
+					<div class="col example pink">
+						<img src="https://placehold.co/400x300" alt="">
+					</div>
+
+					<div class="col example pink">
+						<img src="https://placehold.co/400x300" alt="">
+					</div>
+				</div>
+			</div>
+
 		</main>
-		<!-- <script src="index.js"></script> -->
+	<!-- <script src="index.js"></script> -->
 	</body>
 </html>
