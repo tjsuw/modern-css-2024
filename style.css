@@ -1,4 +1,5 @@
 body {
+	/* colors pulled from the WP theme for the block editor */
 	--wp--preset--color--primary: #4b2e83;
 	--wp--preset--color--secondary: #85754d;
 	--wp--preset--color--husky-purple: #4b2e83;
@@ -19,7 +20,7 @@ body {
 	.has-husky-purple-color { color: var(--wp--preset--color--husky-purple) !important; }
 	.has-husky-gold-color { color: var(--wp--preset--color--husky-gold) !important; }
 	.has-husky-metalic-gold-color { color: var(--wp--preset--color--husky-metallic-gold) !important; }
-	.has-husky-light-gold-color { color: var(--wp--preset--color--light-gold) !important; }
+	.has-husky-light-gold-color { color: var(--wp--preset--color--husky-light-gold) !important; }
 	.has-spirit-purple-color { color: var(--wp--preset--color--spirit-purple) !important; }
 	.has-spirit-gold-color { color: var(--wp--preset--color--spirit-gold) !important; }
 	.has-spirit-candle-green-color { color: var(--wp--preset--color--spirit-candle-green) !important; }
@@ -34,7 +35,7 @@ body {
 	.has-husky-purple-background-color { background-color: var(--wp--preset--color--husky-purple) !important; }
 	.has-husky-gold-background-color { background-color: var(--wp--preset--color--husky-gold) !important; }
 	.has-husky-metalic-gold-background-color { background-color: var(--wp--preset--color--husky-metallic-gold) !important; }
-	.has-husky-light-gold-background-color { background-color: var(--wp--preset--color--light-gold) !important; }
+	.has-husky-light-gold-background-color { background-color: var(--wp--preset--color--husky-light-gold) !important; }
 	.has-spirit-purple-background-color { background-color: var(--wp--preset--color--spirit-purple) !important; }
 	.has-spirit-gold-background-color { background-color: var(--wp--preset--color--spirit-gold) !important; }
 	.has-spirit-candle-green-background-color { background-color: var(--wp--preset--color--spirit-candle-green) !important; }
@@ -46,12 +47,53 @@ body {
 	.has-true-black-background-color { background-color: var(--wp--preset--color--true-black) !important; }
 	.has-gray-background-color { background-color: var(--wp--preset--color--gray) !important; }
 
+	header {
+		.logo {
+			margin-bottom: -12px;
+		}
+		.navbar-brand {
+			margin-left: 20px;
+			font-size: 1.5rem;
+		}
+
+		a.navbar-brand:hover,
+		a.navbar-brand:active,
+		a.navbar-brand:focus {
+			color: var(--wp--preset--color--husky-light-gold) !important;
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 10px;
+		}
+
+		.nav-item a {
+			/* text-decoration: underline; */
+		}
+
+		.nav-item a.active,
+		.nav-item a:hover,
+		.nav-item a:active,
+		.nav-item a:focus {
+			color: var(--wp--preset--color--husky-light-gold) !important;
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 10px;
+		}
+	}
+
+	main {
+		margin-top: 30px;
+		margin-bottom: 80px;
+	}
+
+	.strike {
+		text-decoration: line-through;
+	}
+
 	.gap {
 		gap: 20px;
 	}
 
 	.example {
-		/* width: 500px; */
 		padding: 20px;
 		margin-bottom: 40px;
 		background-color: #efefef;
@@ -80,6 +122,7 @@ body {
 	.pretty {
 		text-wrap: pretty;
 	}
+}
 
 	.ar-4 {
 
