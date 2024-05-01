@@ -94,6 +94,7 @@ body {
 	}
 
 	.example {
+		/* width: 500px; */
 		padding: 20px;
 		margin-bottom: 40px;
 		background-color: #efefef;
@@ -128,22 +129,31 @@ body {
 
 	}
 
-	.bg-white {
-		background-color: var(--wp--preset--color--white);
-	}
-
 	#text-underline-offset {
-		.tu-offset {
-			text-underline-offset: .25em;
+		.tl-td-none {
+			text-decoration: none;
 		}
-		.text-u-2 {
-			text-decoration-thickness: .2em;
+		.tl-link-border-btm {
+			border-bottom: 1px solid;
 		}
-		.text-u-3 {
-			text-decoration-thickness: .3em;
+		.tl-box-shadow {
+			padding: 4px;
+			box-shadow: 0 3px;
 		}
-		.text-u-4 {
-			text-decoration-thickness: .4em;
+		.tl-tu-offset {
+			text-underline-offset: 0.25em;
+		}
+		.tl-tu-offset-2 {
+			text-underline-offset: .5em;
+		}
+		.tl-td-thick-2 {
+			text-decoration-thickness: 0.2em;
+		}
+		.tl-td-thick-3 {
+			text-decoration-thickness: 0.3em;
+		}
+		.tl-td-color-purple {
+			text-decoration-color: var(--wp--preset--color--husky-purple);
 		}
 	}
 

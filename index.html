@@ -95,13 +95,22 @@
 			</div>
 
 			<section id="text-underline-offset">
-				<h2>Text underline offset - WIP</h2>
+				<h2>Text underline offset</h2>
 				<div class="container">
 					<div class="row gap">
-						<div class="col example green bg-white">
-							<p><strong>TODO:</strong> TODO: maybe show an older method of doing this?</p>
-							<p class="mb-0">Text here. <a href="#">Develop your plan today</a> and we'll help you get started. It's
-								quite easy to do and here's another link that's going to use a different way of linking <a href="#" class="tu-offset text-u-2">this one has a different way</a> of underlining. And just <a href="#" class="tu-offset text-u-4">because you can</a> doesn't mean you should.</p>
+						<div class="col example green has-white-background-color">
+							<p>Older ways of styling links...</p>
+							<ul>
+								<li><a href="#">See video of Dubs</a> - do nothing and take the default, which is <code class="language-css">{ text-decoration: underline }</code></li>
+								<li><a href="#" class="tl-td-none tl-link-border-btm">See video of Dubs</a> - remove the default and use border-bottom <code class="language-css">{ border-bottom: 1px solid }</code></li>
+								<li><a href="#" class="tl-td-none tl-box-shadow">See video of Dubs</a> - remove the default and use a box-shadow and put padding around the link <code class="language-css">{ box-shadow: 0 3px; padding: 4px; }</code></li>
+							</ul>
+							<p>With <code class="language-css">text-underline-offset</code> you can...</p>
+							<ul>
+								<li><a href="#" class="tl-tu-offset">See video of Dubs</a> - decide how far from the text you want the underline like, <code class="language-css">{ text-underline-offset: .25em }</code></li>
+								<li><a href="#" class="tl-tu-offset tl-td-thick-2">See video of Dubs</a> - pair it with text-decoration-thickness, so <code class="language-css">{ text-underline-offset: .25em; text-decoration-thickness: 0.2em; }</code></li>
+								<li><a href="#" class="tl-tu-offset-2 tl-td-thick-2">See video of Dubs</a> - go far with the offset (probably not the best idea) with <code class="language-css">{ text-underline-offset: .5em; text-decoration-thickness: 0.2em; }</code></li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -111,7 +120,7 @@
 			<h2>Outline offset - WIP</h2>
 			<div class="container">
 				<div class="row gap">
-					<div class="col example purple bg-white">
+					<div class="col example purple has-white-background-color">
 						<p>
 							<strong>TODO:</strong> add button example, demonstrate negative offset, show list of links.
 						</p>
