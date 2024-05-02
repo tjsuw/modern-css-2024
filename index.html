@@ -7,6 +7,7 @@
 		<title>A guided tour of cutting-edge CSS you can use now &mdash; FET May 2024 presentation</title>
 		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="prism/prism.css">
 		<link rel="icon" href="./favicon.ico" type="image/x-icon">
 	</head>
 	<body>
@@ -42,62 +43,157 @@
 			<p>TODO: Spruce things up a little around here (spacing, etc.)</p>
 
 			<h2>Table of Contents</h2>
+			<h3>All below</h3>
 			<ol>
-				<h3>Super quick hits</h3>
-					<li>Balance headlines/text</li>
-					<li>aspect ratio</li>
-					<li>object fit</li>
-					<li>margin inline</li>
-					<li>text-underline-offset</li>
-					<li>outline offset</li>
-					<li>Scroll margin top/bottom</li>
-					<li>fit content width</li>
-					<li>CSS nesting</li>
-					<li>color scheme</li>
-					<li>accent color</li>
-				<h3>Middle ground</h3>
-					<li><code>:has()</code></li>
-				<h3>Bigger, meatier</h3>
-					<li>subgrid</li>
-					<li>container queries &amp; units</li>
+				<li>Balance headlines/text ✅</li>
+				<li>aspect ratio</li>
+				<li>object fit</li>
+				<li>margin inline</li>
+				<li>text-underline-offset</li>
+				<li>outline offset</li>
+				<li>Scroll margin top/bottom</li>
+				<li>fit content width</li>
+				<li>CSS nesting ✅</li>
+				<li>accent color ✅</li>
+				<li><code>:has()</code></li>
+			</ol>
+			<h3>Separate pages</h3>
+			<ol>
+				<li>color scheme ✅</li>
+				<li>subgrid</li>
+				<li>container queries &amp; units</li>
 			</ol>
 
-			<h2>Balance headlines &amp; text</h2>
-			<div class="container">
-				<div class="row gap">
-					<div class="col example teal">
-						<p class="h1">This is a sample headline that is completely normal - nothing to see here</p>
-						<p>Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+
+			<section id="text-wrap-balance">
+				<h2>Balance headlines &amp; text</h2>
+				<p>Balance headlines and small amounts of text automatically to have more balance across multiple lines (<code>balance</code>) and not have orphans (<code>pretty</code>).</p>
+				<p>Balance is only supported for 6 or fewer lines in Chromium and 10 or fewer lines in Firefox.</p>
+				<p>Adjust your window size to see how these examples wrap differently based on their <code>text-wrap</code> property.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example teal">
+							<p class="h1">This is a sample headline that is completely normal - nothing to see here</p>
+							<p>Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+						</div>
+						<div class="col example teal">
+							<p class="h1 balance">This is a sample headline with balanced text wrap set to balance</p>
+							<p class="balance">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+						</div>
+						<div class="col example teal">
+							<p class="h1 pretty">This is a sample headline with balanced text wrap set to pretty</p>
+							<p class="pretty">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+						</div>
 					</div>
-					<div class="col example teal">
-						<p class="h1 balance">This is a sample headline with balanced text wrap set to balance</p>
-						<p class="balance">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
-					</div>
-					<div class="col example teal">
-						<p class="h1 pretty">This is a sample headline with balanced text wrap set to pretty</p>
-						<p class="pretty">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+
+					<p>To enable these <code>text-wrap</code> options:</p>
+<pre><code class="lang-css">.balance {
+	text-wrap: balance;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance;
+}
+
+.pretty {
+	text-wrap: pretty;
+}</code></pre>
+				</div>
+			</section>
+
+			<section id="aspect-ratio">
+				<h2>Aspect ratio - FINISH</h2>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example pink ar-16-4">
+							<img src="https://placehold.co/400x300" alt="">
+						</div>
+
+						<div class="col example pink">
+							<img src="https://placehold.co/400x300" alt="">
+						</div>
+
+						<div class="col example pink">
+							<img src="https://placehold.co/400x300" alt="">
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<h2>Aspect ratio - finish</h2>
-			<div class="container">
-				<div class="row gap">
-					<div class="col example pink ar-16-4">
-						<img src="https://placehold.co/400x300" alt="">
+			<section id="accent-color">
+				<h2>Accent color</h2>
+				<p>The accent-color property currently works on input elements for checkbox, radio, and range, and the progress element.</p>
+				<p>Note the background color on the progress and range elements is set automatically based on the color specified.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example spgold">
+							<h3>Default</h3>
+							<input type="checkbox">
+							<input type="radio">
+							<input type="range">
+							<progress max="100" value="70">
+						</div>
+						<div class="col example spgold accent1">
+							<h3>Accent color specified</h3>
+							<input type="checkbox">
+							<input type="radio">
+							<input type="range">
+							<progress max="100" value="70">
+						</div>
+						<div class="col example spgold accent2">
+							<h3>Accent color specified</h3>
+							<input type="checkbox">
+							<input type="radio">
+							<input type="range">
+							<progress max="100" value="70">
+						</div>
 					</div>
 
-					<div class="col example pink">
-						<img src="https://placehold.co/400x300" alt="">
-					</div>
-
-					<div class="col example pink">
-						<img src="https://placehold.co/400x300" alt="">
-					</div>
+					<p>To enable accent color:</p>
+					<pre><code class="lang-css">.accent1 {
+	accent-color: pink;
+}
+.accent2 {
+	accent-color: #4b2e83;
+}</code></pre>
 				</div>
-			</div>
+			</section>
 
+			<section id="css-nesting">
+				<h2>CSS Nesting</h2>
+				<p>Basically, like nesting in Sass or LESS, but parsed by the browser instead of compiled a preprocessor. If you are familiar with Sass, this will be almost identical.</p>
+
+				<p>Here's an example from this site's stylesheet:</p>
+				<pre><code class="lang-css">body {
+	#accent-color {
+		.accent1 {
+			accent-color: pink;
+		}
+
+		.accent2 {
+			accent-color: var(--wp--preset--color--husky-purple);
+		}
+	}
+}</code></pre>
+
+				<p>The browser essentially converts this to:</p>
+				<pre><code class="lang-css">body #accent-color .accent1 {
+	accent-color: pink;
+}
+
+body #accent-color .accent2 {
+	accent-color: var(--wp--preset--color--husky-purple);
+}</code></pre>
+
+				<p>Also check out what it looks like in the dev tools with the nesting.</p>
+			</section>
+
+			<section id="css-has">
+				<h2><code>:has()</code> - FINISH</h2>
+				<p>From MDN: "The functional :has() CSS pseudo-class represents an element if any of the relative selectors that are passed as an argument match at least one element when anchored against this element. This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument."</p>
+			</section>
 		</main>
-	<!-- <script src="index.js"></script> -->
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="prism/prism.js"></script>
 	</body>
 </html>

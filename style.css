@@ -93,6 +93,10 @@ body {
 		gap: 20px;
 	}
 
+	section {
+		margin-bottom: 60px;
+	}
+
 	.example {
 		padding: 20px;
 		margin-bottom: 40px;
@@ -107,11 +111,33 @@ body {
 		border: 2px solid var(--wp--preset--color--spirit-pink);
 	}
 
+	.example.green {
+		border: 2px solid var(--wp--preset--color--spirit-candle-green);
+	}
+
+	.example.purple {
+		border: 2px solid var(--wp--preset--color--husky-purple);
+	}
+
+	.example.spgold {
+		border: 2px solid var(--wp--preset--color--spirit-gold);
+	}
+
 	.balance {
 		text-wrap: balance;
 	}
 
 	.pretty {
 		text-wrap: pretty;
+	}
+
+	#accent-color {
+		.accent1 {
+			accent-color: pink;
+		}
+
+		.accent2 {
+			accent-color: var(--wp--preset--color--husky-purple);
+		}
 	}
 }
