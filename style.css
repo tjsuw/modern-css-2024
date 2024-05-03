@@ -93,8 +93,11 @@ body {
 		gap: 20px;
 	}
 
+	section {
+		margin-bottom: 60px;
+	}
+
 	.example {
-		/* width: 500px; */
 		padding: 20px;
 		margin-bottom: 40px;
 		background-color: #efefef;
@@ -116,6 +119,10 @@ body {
 		border: 2px solid var(--wp--preset--color--husky-purple);
 	}
 
+	.example.spgold {
+		border: 2px solid var(--wp--preset--color--spirit-gold);
+	}
+
 	.balance {
 		text-wrap: balance;
 	}
@@ -123,35 +130,47 @@ body {
 	.pretty {
 		text-wrap: pretty;
 	}
-}
 
-	.ar-4 {
+	#accent-color {
+		.accent1 {
+			accent-color: pink;
+		}
 
+		.accent2 {
+			accent-color: var(--wp--preset--color--husky-purple);
+		}
 	}
 
 	#text-underline-offset {
 		.tl-td-none {
 			text-decoration: none;
 		}
+
 		.tl-link-border-btm {
 			border-bottom: 1px solid;
 		}
+
 		.tl-box-shadow {
 			padding: 4px;
 			box-shadow: 0 3px;
 		}
+
 		.tl-tu-offset {
 			text-underline-offset: 0.25em;
 		}
+
 		.tl-tu-offset-2 {
 			text-underline-offset: .5em;
 		}
+
 		.tl-td-thick-2 {
 			text-decoration-thickness: 0.2em;
 		}
+
 		.tl-td-thick-3 {
 			text-decoration-thickness: 0.3em;
 		}
+
 		.tl-td-color-purple {
 			text-decoration-color: var(--wp--preset--color--husky-purple);
 		}
@@ -160,13 +179,16 @@ body {
 	#outline-offset {
 		.o-offset {
 			outline-offset: .125em;
+
 			&.teal {
 				outline-color: var(--wp--preset--color--spirit-teal);
 			}
+
 			&.black {
 				outline-color: var(--wp--preset--color--true-black);
 			}
 		}
+
 		a:focus-visible {
 			outline: 2px dashed;
 		}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="color-scheme" content="dark light">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Color Scheme &mdash; FET May 2024 presentation</title>
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="color.css">
+		<link rel="stylesheet" href="prism/prism.css">
+		<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg has-husky-purple-background-color">
+				<div class="container">
+					<div class="d-flex">
+						<a href="https://www.washington.edu/"><img class="logo" src="assets/W-Logo_White.png" alt="UW logo" width="80"></a>
+						<a class="navbar-brand has-white-color" href="index.html">FET May 2024</a>
+					</div>
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color active" aria-current="page" href="color-scheme.html">Color Scheme</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="resources.html">Resources</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main class="container">
+			<h1>Color scheme examples</h1>
+			<section class="mb-5">
+				<h2>Color Modes in Bootstrap</h2>
+				<p>Setting the color scheme in <a href="https://getbootstrap.com/docs/5.3/customize/color-modes/">Bootstrap (as of 5.3)</a> is super easy. You can either add <code>data-bs-theme="dark|light"</code> to the html attibute:</p>
+				<pre><code class="lang-html">&lt;html lang="en" data-bs-theme="dark"&gt;</code></pre>
+				<p>Or you can add it to individual elements:</p>
+				<div class="d-flex mb-3 gap">
+					<div class="dropdown" data-bs-theme="light">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+						Default dropdown
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+						<li><a class="dropdown-item active" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Another action</a></li>
+						<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#">Separated link</a></li>
+						</ul>
+					</div>
+
+					<div class="dropdown" data-bs-theme="dark">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+						Dark dropdown
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+						<li><a class="dropdown-item active" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Another action</a></li>
+						<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#">Separated link</a></li>
+						</ul>
+					</div>
+				</div>
+				<p>Like:</p>
+				<pre><code class="lang-html">&lt;div class="dropdown" data-bs-theme="dark"&gt;&lt;/div&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>With color-scheme CSS</h2>
+				<p>Change your system preferences or use your browser dev tools to light or dark to see the light and dark examples update. Normal should always stay the same.</p>
+
+				<div class="d-flex gap">
+					<div class="example normal">
+						<h3>Color scheme example - normal</h3>
+						<p>Cat ipsum dolor sit amet, claw your carpet in places everyone can see - why hide my amazing artistic clawing skills?. Bathe private parts with tongue then lick owner's face scream for no reason at 4 am. Licks your face i show my fluffy belly but it's a trap! if you pet it i will tear up your hand, when owners are asleep, cry for no apparent reason or meow meow so friends are not food purr scratch at the door then walk away. Annoy kitten brother with poking sleep over your phone and make cute snoring noises.</p>
+					</div>
+
+					<div class="example dark">
+						<h3>Color scheme example - dark</h3>
+						<p>Cat ipsum dolor sit amet, claw your carpet in places everyone can see - why hide my amazing artistic clawing skills?. Bathe private parts with tongue then lick owner's face scream for no reason at 4 am. Licks your face i show my fluffy belly but it's a trap! if you pet it i will tear up your hand, when owners are asleep, cry for no apparent reason or meow meow so friends are not food purr scratch at the door then walk away. Annoy kitten brother with poking sleep over your phone and make cute snoring noises.</p>
+					</div>
+
+					<div class="example light">
+						<h3>Color scheme example - light</h3>
+						<p>Cat ipsum dolor sit amet, claw your carpet in places everyone can see - why hide my amazing artistic clawing skills?. Bathe private parts with tongue then lick owner's face scream for no reason at 4 am. Licks your face i show my fluffy belly but it's a trap! if you pet it i will tear up your hand, when owners are asleep, cry for no apparent reason or meow meow so friends are not food purr scratch at the door then walk away. Annoy kitten brother with poking sleep over your phone and make cute snoring noises.</p>
+					</div>
+				</div>
+
+				<p>You can either set the color-scheme on the :root element for the full page or on sections or individual elements. You can use media queries to target.</p>
+				<pre>
+<code class="lang-css">:root {
+	color-scheme: dark light;
+}</code>
+				</pre>
+				<pre>
+<code class="lang-css">@media (prefers-color-scheme: dark) {
+	.example.dark {
+		background-color: #4b2e83;
+
+		h3, p {
+			color: #e8e3d3;
+		}
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.example.light {
+		background-color: #e8e3d3;
+
+		h3, p {
+			color: #4b2e83;
+		}
+	}
+}</code>
+				</pre>
+			</section>
+		</main>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="prism/prism.js"></script>
+	</body>
+</html>
