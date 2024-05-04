@@ -177,20 +177,32 @@ body {
 	}
 
 	#outline-offset {
-		.o-offset {
-			outline-offset: .125em;
+		.element-to-offset {
+			padding: .75em;
+			margin-right: 2em;
+			border: 1px solid var(--wp--preset--color--spirit-pink);
+			outline: 2px dashed var(--wp--preset--color--true-black);
+			outline-offset: 0.5em;
+		}
 
-			&.teal {
-				outline-color: var(--wp--preset--color--spirit-teal);
-			}
+		.o-offset-p {
+			outline-offset: 0.5em;
+		}
 
-			&.black {
-				outline-color: var(--wp--preset--color--true-black);
+		.o-offset-n {
+			outline-offset: -0.5em;
+		}
+
+		.o-offset-p,
+		.o-offset-n {
+			&:focus {
+				outline: 2px dashed var(--wp--preset--color--true-black);
 			}
 		}
 
-		a:focus-visible {
-			outline: 2px dashed;
-		}
+
+		/*a:focus-visible {*/
+		/*	outline: 2px dashed;*/
+		/*}*/
 	}
 }
