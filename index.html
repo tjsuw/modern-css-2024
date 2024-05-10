@@ -46,8 +46,8 @@
 			<h3>All below</h3>
 			<ol>
 				<li>Balance headlines/text ✅</li>
-				<li>aspect ratio</li>
 				<li>object fit</li>
+				<li>aspect ratio ✅</li>
 				<li>margin inline</li>
 				<li>text-underline-offset ✅</li>
 				<li>outline offset ✅</li>
@@ -102,19 +102,118 @@ h1, h2, h3, h4, h5, h6 {
 			</section>
 
 			<section id="aspect-ratio">
-				<h2>Aspect ratio - FINISH</h2>
+				<h2>Aspect ratio</h2>
+				<p>Aspect ratio can be an incredibly handy tool to resolve traditionally frustrating layout situations.</p>
+				<p>As you can see with the image examples below, <code>aspect-ratio</code> used alone may not be your best bet, but combined with <code>object-fit</code>, can guarantee you will always have the same layout.</p>
 				<div class="container">
 					<div class="row gap">
-						<div class="col example pink ar-16-4">
-							<img src="https://placehold.co/400x300" alt="">
+						<div class="col example pink responsive">
+							<h3>Normal responsive image</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+}</code></pre>
 						</div>
 
-						<div class="col example pink">
-							<img src="https://placehold.co/400x300" alt="">
+						<div class="col example pink ar-1">
+							<h3>16:9 aspect ratio</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}</code></pre>
 						</div>
 
+						<div class="col example pink ar-2">
+							<h3>1:1 aspect ratio</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+}</code></pre>
+						</div>
+					</div>
+
+					<p>Here are the same examples with <code>object-fit</code> and <code>object-position</code> also applied:</p>
+					<div class="row gap">
+						<div class="col example pink responsive">
+							<h3>Normal responsive image</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+}</code></pre>
+						</div>
+
+						<div class="col example pink ar-3">
+							<h3>16:9 aspect ratio</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+	aspect-ratio: 16 / 9;
+}</code></pre>
+						</div>
+
+						<div class="col example pink ar-4">
+							<h3>1:1 aspect ratio</h3>
+							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+
+							<pre><code class="language-css">img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+	aspect-ratio: 1 / 1;
+}</code></pre>
+						</div>
+					</div>
+
+					<p>Getting into video, iframes in particular, is where things have traditionally been annoying and frustrating to wrangle. With aspect-ratio, you can ensure your video is always the same aspect ratio regardless if the window or screen size.</p>
+
+					<div class="row gap">
 						<div class="col example pink">
-							<img src="https://placehold.co/400x300" alt="">
+							<h3>Normal YouTube embed - fixed width & height</h3>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+							<pre><code class="language-html">&lt;iframe width="560" height="315"
+src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
+title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
+						</div>
+						<div class="col example pink ar-2">
+							<h3>YouTube embed with fixed width and aspect ratio 1/1</h3>
+							<iframe width="500" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+							<pre><code class="language-html">&lt;iframe width="500"
+src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
+title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
+
+<pre><code class="language-css">iframe {
+	aspect-ratio: 1 / 1;
+}</code></pre>
+
+						</div>
+						<div class="col example pink ar-1">
+							<h3>YouTube embed with aspect ratio 16/9</h3>
+							<iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							<pre><code class="language-html">&lt;iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
+title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
+
+<pre><code class="language-css">iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}</code></pre>
 						</div>
 					</div>
 				</div>
