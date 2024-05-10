@@ -49,8 +49,8 @@
 				<li>aspect ratio</li>
 				<li>object fit</li>
 				<li>margin inline</li>
-				<li>text-underline-offset</li>
-				<li>outline offset</li>
+				<li>text-underline-offset ✅</li>
+				<li>outline offset ✅</li>
 				<li>Scroll margin top/bottom</li>
 				<li>fit content width</li>
 				<li>CSS nesting ✅</li>
@@ -119,6 +119,92 @@ h1, h2, h3, h4, h5, h6 {
 					</div>
 				</div>
 			</section>
+
+			<section id="text-underline-offset">
+				<h2>Text underline offset</h2>
+				<p>We now have <code>text-underline-offset</code> which controls the distance of the underline from the text (which is coming from <code>text-decoration: underline</code>).</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example green">
+							<h3>Some "older" ways</h3>
+							<ul>
+								<li><a href="#">See video of Dubs</a> - do nothing and take the default, which is: <pre><code class="language-css">{
+	text-decoration: underline;
+}
+</code></pre>
+								</li>
+								<li><a href="#" class="tl-td-none tl-link-border-btm">See video of Dubs</a> - remove the default and use border-bottom <pre><code class="language-css">{
+	text-decoration: none;
+	border-bottom: 1px solid
+}</code></pre>
+								</li>
+								<li><a href="#" class="tl-td-none tl-box-shadow">See video of Dubs</a> - remove the default and use a box-shadow and put padding around the link:
+<pre>
+<code class="lang-css">{
+	text-decoration: none;
+	box-shadow: 0 3px;
+	padding: 4px;
+}</code></pre>
+								</li>
+							</ul>
+						</div>
+						<div class="col example green">
+							<h3>What the cool kids are using now</h3>
+							<ul>
+								<li><a href="#" class="tl-tu-offset">See video of Dubs</a> - decide how far from the text you want the underline like: <pre><code class="language-css">{
+	text-underline-offset: .25em;
+}</code></pre>
+								</li>
+								<li><a href="#" class="tl-tu-offset tl-td-thick-2">See video of Dubs</a> - pair it with text-decoration-thickness, so: <pre><code class="language-css">{
+	text-underline-offset: .25em;
+	text-decoration-thickness: 0.2em;
+}</code></pre></li>
+								<li><a href="#" class="tl-tu-offset-2 tl-td-thick-3">See video of Dubs</a> - go far with the offset <strong>and</strong> thicken up the border (probably not the best idea?) with <pre><code class="language-css">{
+	text-underline-offset: .5em;
+	text-decoration-thickness: 0.3em;
+}</code></pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+		</section>
+
+		<section id="outline-offset">
+			<h2>Outline offset</h2>
+			<p>
+				Adding <code>outline-offset</code> to an element pushes the outline away by the value you give the property. Using a negative value pulls the outline into the element.
+			</p>
+			<div class="container">
+				<div class="row gap">
+					<div class="col example purple has-white-background-color">
+						<h3 class="mb-4">The general idea</h3>
+						<p>
+							<span class="element-to-offset">This has a positive offset</span>
+							<span class="element-to-offset o-offset-n">This has a negative offset</span>
+						</p>
+					</div>
+				</div>
+				<div class="row gap">
+					<div class="col example purple has-white-background-color">
+						<h3>Links in a paragraph</h3>
+						<p>This first link has <a href="#">no outline-offset on focus</a>! Here's some more text so we can see it in action among <a href="#" class="o-offset-p black">other links that have</a> outline-offset on focus. And were we to keep tabbing through a paragraph - <a href="#" class="o-offset-p black">here's a link to another place</a>.
+						</p>
+					</div>
+					<div class="col example purple has-white-background-color">
+						<h3>Buttons</h3>
+						<p>
+							Here are some things we can do with buttons and adding outline-offset on focus.
+						</p>
+						<p>
+							<button type="button" class="p-2 o-offset-p">Plain button - outside</button></p>
+							<button type="button" class="p-2 o-offset-n">Plain button - inside</button></p>
+							<button type="button" class="btn btn-info o-offset-p">Bootstrap btn - outside</button></p>
+							<button type="button" class="btn btn-info o-offset-n">Bootstrap btn - inside</button></p>
+					</div>
+				</div>
+			</div>
+		</section>
 
 			<section id="accent-color">
 				<h2>Accent color</h2>
