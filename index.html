@@ -48,7 +48,7 @@
 				<li>Balance headlines/text ✅</li>
 				<li>object fit</li>
 				<li>aspect ratio ✅</li>
-				<li>margin inline</li>
+				<li><a href="#margin-inline">margin inline</a></li>
 				<li>text-underline-offset ✅</li>
 				<li>outline offset ✅</li>
 				<li>Scroll margin top/bottom</li>
@@ -219,6 +219,73 @@ title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 				</div>
 			</section>
 
+			<section id="margin-inline">
+				<h2>Margin inline</h2>
+				<p><code>margin-inline</code> is a shorthand for setting the inline margin (aka, the left and right margin for horizontal writing modes). To demonstrate the benefits, I've thrown in a few more <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">logical properties</a> in these examples. Logical properties were new to me!</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example sm-6 teal">
+							<h3>The long form way</h3>
+							<div class="card long-form mb-3">
+								<div class="card-body">
+									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
+								</div>
+							</div>
+							<div class="card long-form rtl mb-3">
+								<div class="card-body">
+									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. It has a solid right border.</p>
+								</div>
+							</div>
+							<p>For the first example above I added some styles to the <code>.card</code> wrapper:</p>
+<pre><code class="lang-css">.card {
+	padding-left: 1.5em;
+	padding-right: 1em;
+	border-left: 1.5em solid #4b2e83;
+}
+img {
+	margin-right: 1em;
+}
+</code></pre>
+							<p>Then, for second example (assuming <code>direction: rtl;</code> is set), some styles needed to be reset and others added:</p>
+<pre><code class="lang-css">.card {
+	padding-right: 1.5em;
+	padding-left: 1em;
+	border-left: 0;
+	border-right: 1.5em solid #4b2e83;
+}
+img {
+	margin-right: 0;
+	margin-left: 1em;
+}
+</code></pre>
+						</div>
+						<div class="col example sm-6 teal">
+							<h3>Now with logical properties</h3>
+							<div class="card short-form mb-3">
+								<div class="card-body">
+									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
+								</div>
+							</div>
+							<div class="card short-form rtl mb-3">
+								<div class="card-body">
+									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. This has a solid right border.</p>
+								</div>
+							</div>
+							<p>For both the examples directy above, this is all that was needed:</p>
+<pre><code class="lang-css">.card {
+	padding-inline-start: 1.5em;
+	padding-inline-end: 1em;
+	border-inline-start: 1.5em solid #4b2e83;
+}
+img {
+	margin-inline-end: 1em;
+}
+</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section id="text-underline-offset">
 				<h2>Text underline offset</h2>
 				<p>We now have <code>text-underline-offset</code> which controls the distance of the underline from the text (which is coming from <code>text-decoration: underline</code>).</p>
@@ -344,6 +411,23 @@ title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 				</div>
 			</section>
 
+			<section id="fit-content-width">
+				<h2>Fit content width</h2>
+				<p>Instead of <code>display: inline-block;</code> to have an element's width match its content's size, you can use <code>width: fit-content</code> to achieve the same. This leaves the <code>display</code> property open for other use. The computed box size adjusts to the dimensions created when using <code>fit-content</code>.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example green">
+							<div class="has-spirit-candle-green-background-color p-3 mb-3">
+								<p class="mb-0">The wrapper fills the available space.</p>
+							</div>
+							<div class="fit-content has-husky-light-gold-background-color p-3 mb-3">
+								<p class="mb-0">The wrapper fits the content because we're using <code>width: fit-content</code>.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
 			<section id="css-nesting">
 				<h2>CSS Nesting</h2>
 				<p>Basically, like nesting in Sass or LESS, but parsed by the browser instead of compiled a preprocessor. If you are familiar with Sass, this will be almost identical.</p>
