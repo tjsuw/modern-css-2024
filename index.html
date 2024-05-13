@@ -411,6 +411,23 @@ img {
 				</div>
 			</section>
 
+			<section id="fit-content-width">
+				<h2>Fit content width</h2>
+				<p>Instead of <code>display: inline-block;</code> to have an element's width match its content's size, you can use <code>width: fit-content</code> to achieve the same. This leaves the <code>display</code> property open for other use. The computed box size adjusts to the dimensions created when using <code>fit-content</code>.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example green">
+							<div class="has-spirit-candle-green-background-color p-3 mb-3">
+								<p class="mb-0">The wrapper fills the available space.</p>
+							</div>
+							<div class="fit-content has-husky-light-gold-background-color p-3 mb-3">
+								<p class="mb-0">The wrapper fits the content because we're using <code>width: fit-content</code>.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
 			<section id="css-nesting">
 				<h2>CSS Nesting</h2>
 				<p>Basically, like nesting in Sass or LESS, but parsed by the browser instead of compiled a preprocessor. If you are familiar with Sass, this will be almost identical.</p>
