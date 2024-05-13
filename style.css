@@ -205,4 +205,61 @@ body {
 		/*	outline: 2px dashed;*/
 		/*}*/
 	}
+
+	#aspect-ratio {
+		.example {
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			&.ar-1 {
+				iframe, img {
+					aspect-ratio: 16 / 9;
+				}
+
+				iframe {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			&.ar-2 {
+				iframe, img {
+					aspect-ratio: 1 / 1;
+				}
+
+				@media screen and (max-width: 768px) {
+					iframe {
+						max-width: 100%;
+					}
+				}
+			}
+
+			&.ar-3 {
+				img {
+					object-fit: cover;
+					object-position: center;
+					aspect-ratio: 16 / 9;
+				}
+
+			}
+
+			&.ar-4 {
+				img {
+					object-fit: cover;
+					object-position: center;
+					aspect-ratio: 1 / 1;
+				}
+			}
+		}
+	}
+
+	#css-has {
+		.card:has(img) {
+			h2, h3, h4, h5, h6 {
+				margin-top: 2rem;
+			}
+		}
+	}
 }
