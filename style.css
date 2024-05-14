@@ -289,7 +289,7 @@ body {
 					img {
 						margin-right: 0;
 						margin-left: 1em;
-					}					
+					}
 				}
 			}
 			&.short-form {
@@ -308,5 +308,98 @@ body {
 			width: fit-content;
 			border: 2px dashed var(--wp--preset--color--husky-gold);
 		}
+	}
+
+	#grid-example {
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+			gap: 1rem;
+			margin-bottom: 2rem;
+
+			.grid-item {
+				border: 1px solid var(--wp--preset--color--spirit-candle-green);
+
+				img {
+					width: 100%;
+					height: auto;
+					margin-bottom: 1rem;
+				}
+
+				h3, p {
+					padding-left: 1rem;
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+
+	#nested-grid-example {
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+			gap: 1rem;
+			margin-bottom: 2rem;
+
+			.grid-item {
+				border: 1px solid var(--wp--preset--color--spirit-teal);
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-position: center;
+					object-fit: cover;
+					grid-row-start: 1;
+					grid-row-end: 4;
+				}
+
+				h3, p {
+					padding-left: 1rem;
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+
+	#subgrid-example-1 {
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: repeat(4, minmax(100px, auto));
+			gap: 1rem;
+			margin-bottom: 2rem;
+			background-color: #ddd;
+			border: 1px solid #333;
+
+			.grid-item {
+				border: 1px solid var(--wp--preset--color--spirit-pink);
+				background-color: pink;
+				display: grid;
+				grid-column: 2 / 7;
+				grid-row: 2 / 4;
+				grid-template-columns: subgrid;
+				grid-template-rows: repeat(3, 80px);
+
+				.subitem {
+					grid-column: 3 / 6;
+  					grid-row: 1 / 3;
+					border: 1px solid var(--wp--preset--color--spirit-teal);
+					background-color: lightblue;
+				}
+			}
+		}
+	}
+
+	#subgrid-example-2 {
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: repeat(4, minmax(100px, auto));
+			gap: 1rem;
+			margin-bottom: 2rem;
+		}
+
 	}
 }
