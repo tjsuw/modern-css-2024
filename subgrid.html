@@ -231,7 +231,7 @@
 
 				<p>Now, say you want to your child grid items to use the parent grid for placement. That's where <code>subgrid</code> comes into play!</p>
 
-				<p>Because subgrid is all about placement, we'll need to use a new example.</p>
+				<p>Because subgrid is all about placement, we'll need to use a new example. Open up your Dev Tools and peek around to see what's going on with this grid.</p>
 
 				<div class="grid">
 					<div class="grid-item">
@@ -278,12 +278,139 @@
 
 			</section>
 
-			<p>So this is great but I'm guessing you want a practical example?</p>
+			<p>So this is great and all but I'm guessing you want a practical example?</p>
 
 			<section id="subgrid-example-2">
 				<h2>Subgrid example &mdash; specific</h2>
+				<p>Let's first look at the example with some background colors applied so it's easier to see the different elements.</p>
 
+				<div class="grid">
+					<div class="grid-item">
+						<img src="assets/cb1.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Cupcake ipsum dolor sit amet. Liquorice bear claw tiramisu sweet shortbread.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb2.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item with a longer title</h3>
+						<p>Pudding candy canes muffin pastry jelly beans bonbon fruitcake. Marzipan tootsie roll gummies dessert gummies soufflé danish.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb3.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Marzipan tootsie roll gummies dessert gummies soufflé danish.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb4.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Halvah toffee sweet oat cake cheesecake. Marzipan ice cream marzipan candy jujubes.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb5.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sugar plum tootsie roll fruitcake jelly-o carrot cake cake cake biscuit toffee.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb6.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sweet roll topping jelly sweet carrot cake jujubes topping.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb7.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sweet roll topping jelly sweet carrot cake jujubes topping.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb8.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sesame snaps cupcake cookie bear claw tart pastry.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb9.jpg" alt="UW cherry blossoms">
+						<h3>Short title</h3>
+						<p>Biscuit apple pie toffee pudding donut candy tart.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb10.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Macaroon chupa chups muffin dessert jelly marzipan cheesecake. Lemon drops toffee lollipop croissant sugar plum muffin oat cake icing sesame snaps.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+				</div>
 
+				<p>Now we can see the same example without the background colors:</p>
+
+				<div class="grid without-backgrounds">
+					<div class="grid-item">
+						<img src="assets/cb1.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Cupcake ipsum dolor sit amet. Liquorice bear claw tiramisu sweet shortbread.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb2.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item with a longer title</h3>
+						<p>Pudding candy canes muffin pastry jelly beans bonbon fruitcake. Marzipan tootsie roll gummies dessert gummies soufflé danish.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb3.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Marzipan tootsie roll gummies dessert gummies soufflé danish.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb4.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Halvah toffee sweet oat cake cheesecake. Marzipan ice cream marzipan candy jujubes.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb5.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sugar plum tootsie roll fruitcake jelly-o carrot cake cake cake biscuit toffee.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb6.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sweet roll topping jelly sweet carrot cake jujubes topping.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb7.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sweet roll topping jelly sweet carrot cake jujubes topping.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb8.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Sesame snaps cupcake cookie bear claw tart pastry.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb9.jpg" alt="UW cherry blossoms">
+						<h3>Short title</h3>
+						<p>Biscuit apple pie toffee pudding donut candy tart.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+					<div class="grid-item">
+						<img src="assets/cb10.jpg" alt="UW cherry blossoms">
+						<h3>Sample grid item</h3>
+						<p>Macaroon chupa chups muffin dessert jelly marzipan cheesecake. Lemon drops toffee lollipop croissant sugar plum muffin oat cake icing sesame snaps.</p>
+						<p><a href="#">Read more</a></p>
+					</div>
+				</div>
 			</section>
 
 			<h4>Want to learn more about CSS Grid?</h4>
@@ -293,14 +420,3 @@
 		<script src="prism/prism.js"></script>
 	</body>
 </html>
-
-
-Cupcake ipsum dolor sit amet. Liquorice bear claw tiramisu sweet shortbread. Pudding candy canes muffin pastry jelly beans bonbon fruitcake. Marzipan tootsie roll gummies dessert gummies soufflé danish.
-
-Halvah toffee sweet oat cake cheesecake. Marzipan ice cream marzipan candy jujubes. Sugar plum tootsie roll fruitcake jelly-o carrot cake cake cake biscuit toffee. Sweet roll topping jelly sweet carrot cake jujubes topping.
-
-Sesame snaps cupcake cookie bear claw tart pastry. Dragée chocolate cupcake macaroon powder fruitcake cookie liquorice toffee. Biscuit apple pie toffee pudding donut candy tart. Macaroon chupa chups muffin dessert jelly marzipan cheesecake.
-
-Cake pie fruitcake shortbread marshmallow croissant candy oat cake. Jelly-o liquorice chocolate bar danish wafer toffee. Cake icing macaroon jelly-o dessert sweet.
-
-Carrot cake cheesecake lollipop shortbread macaroon jelly wafer carrot cake. Cookie muffin halvah gummi bears jelly-o icing biscuit bonbon. Lemon drops toffee lollipop croissant sugar plum muffin oat cake icing sesame snaps.

@@ -395,10 +395,60 @@ body {
 	#subgrid-example-2 {
 		.grid {
 			display: grid;
-			grid-template-columns: repeat(12, 1fr);
-			grid-template-rows: repeat(4, minmax(100px, auto));
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 			gap: 1rem;
 			margin-bottom: 2rem;
+
+			.grid-item {
+				display: grid;
+				grid-template-rows: subgrid;
+				grid-row: span 4;
+				gap: 0;
+				border: 1px solid var(--wp--preset--color--spirit-purple);
+
+				img {
+					width: 100%;
+					height: 200px;
+					object-position: center;
+					object-fit: cover;
+				}
+
+				h3, p {
+					padding-left: 1rem;
+					padding-right: 1rem;
+					margin: 0;
+				}
+
+				h3 {
+					background-color: lightskyblue;
+				}
+
+				p {
+					background-color: lightpink;
+				}
+
+				p:has(a) {
+					background-color: lightgreen;
+
+					a { color: darkblue; }
+				}
+			}
+
+			&.without-backgrounds {
+				.grid-item {
+					h3 {
+						background: none;
+					}
+
+					p {
+						background: none;
+					}
+
+					p:has(a) {
+						background: none;
+					}
+				}
+			}
 		}
 
 	}
