@@ -306,6 +306,12 @@ body {
 				display: none;
 			}
 		}
+
+		.tip {
+			border: 1px solid var(--wp--preset--color--husky-metallic-gold);
+			background-color: var(--wp--preset--color--husky-light-gold);
+			padding: 2rem;
+		}
 	}
 
 	#margin-inline {
@@ -501,11 +507,5 @@ body {
 			}
 		}
 
-	}
-
-	.tip {
-		border: 1px solid var(--wp--preset--color--husky-metallic-gold);
-		background-color: var(--wp--preset--color--husky-light-gold);
-		padding: 2rem;
 	}
 }
