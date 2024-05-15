@@ -309,4 +309,36 @@ body {
 			border: 2px dashed var(--wp--preset--color--husky-gold);
 		}
 	}
+
+	#object-fit {
+		.custom-cards {
+			display: flex;
+			margin: 0 -0.5em;
+		}
+		.custom-card {
+			margin: 0.5em;
+			width: 33.33%;
+			border-radius: 1em;
+			height: auto;
+			box-shadow: 0 0 4px -2px var(--wp--preset--color--black);
+			background-color: var(--wp--preset--color--white);
+			&.cover {
+				img {
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+			&.better {
+				max-height: 100%;
+				img {
+					border-radius: 1em 1em 0 0;
+					height: 50%;
+					object-position: center bottom;
+				}
+			}
+			.custom-card-body {
+				padding: 0.5em;
+			}
+		}
+	}
 }

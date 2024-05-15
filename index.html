@@ -48,11 +48,11 @@
 				<li>Balance headlines/text ✅</li>
 				<li>object fit</li>
 				<li>aspect ratio ✅</li>
-				<li><a href="#margin-inline">margin inline</a></li>
+				<li>margin inline ✅</li>
 				<li>text-underline-offset ✅</li>
 				<li>outline offset ✅</li>
 				<li>Scroll margin top/bottom</li>
-				<li>fit content width</li>
+				<li>fit content width ✅</li>
 				<li>CSS nesting ✅</li>
 				<li>accent color ✅</li>
 				<li><code>:has()</code></li>
@@ -98,6 +98,117 @@ h1, h2, h3, h4, h5, h6 {
 .pretty {
 	text-wrap: pretty;
 }</code></pre>
+				</div>
+			</section>
+
+			<section id="object-fit">
+				<h2>Object fit</h2>
+				<p>Move over <code>background-image</code>! Now we can use <code>{ object-fit: cover; }</code> to get a similar result. It makes an image behave like a background image, but with the advantage of retaining the semantics of an <code>img</code> tag. We can also use <code>{ object-fit: scale-down; }</code>. The image acts as a container for its own contents.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example green">
+							<h3>Images set inside some custom (non-Bootstrap) cards</h3>
+							<div class="custom-cards">
+								<div class="custom-card">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+										<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>300x200</strong>.</p>
+									</div>
+								</div>
+								<div class="custom-card">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>125x188</strong>.</p>
+									</div>
+								</div>
+								<div class="custom-card">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>400x400</strong>.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	/* nothing set...image will break outside of its containing element, if it needs to */
+}</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="row gap">
+						<div class="col example green">
+							<h3>Images set inside custom cards, but better</h3>
+							<div class="custom-cards">
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+									<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+									</div>
+								</div>
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+									</div>
+								</div>
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	object-fit: cover;
+	width: 100%;
+}</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="row gap">
+						<div class="col example green">
+							<h3>And taking it one step further</h3>
+							<div class="custom-cards">
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+										<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+									</div>
+								</div>
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+									</div>
+								</div>
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	object-fit: cover;
+	width: 100%;
+	border-radius: 1em 1em 0 0;
+	height: 50%;
+	object-position: center bottom;
+}</code></pre>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
