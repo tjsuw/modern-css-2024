@@ -506,6 +506,104 @@ body {
 				}
 			}
 		}
+	}
 
+	#container-queries {
+		.social {
+			max-width: 500px;
+			container-name: social; /* optional */
+			container-type: inline-size;
+
+			&.query-units {
+				container-name: query-units;
+			}
+
+			.post {
+				border-radius: 5px;
+				border: 1px solid var(--wp--preset--color--black);
+				padding: 1.5rem;
+
+				.heading {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-bottom: 1rem;
+
+					.profile-pic {
+						width: 60px;
+						height: 60px;
+						object-fit: cover;
+						object-position: 20%;
+						border-radius: 50%;
+						margin-right: 15px;
+					}
+
+					.personal-info {
+						h4, p {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				.content {
+					img {
+						width: 100%;
+						height: auto;
+						margin: 0.5rem 0 1rem;
+					}
+				}
+
+				.actions {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+
+					.profile-icon {
+						width: 25px;
+						height: 25px;
+						object-fit: cover;
+						object-position: 20%;
+						border-radius: 50%;
+					}
+
+					div {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+
+						.bi {
+							margin-right: 0.5rem;
+
+							&:before {
+								font-size: 1.25rem;
+							}
+						}
+
+						.label {
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+		}
+
+		@container social (min-width: 450px) {
+			.label {
+				display: block;
+			}
+		}
+
+		@container social (max-width: 449px) {
+			.label {
+				display: none;
+			}
+		}
+
+		@container query-units (max-width: 500px) {
+			h4 {
+				font-size: max(1.5em, 1.23em + 2cqi);
+			}
+		}
 	}
 }
