@@ -58,12 +58,12 @@
 				<li>fit content width</li>
 				<li>CSS nesting ✅</li>
 				<li>accent color ✅</li>
-				<li><code>:has()</code></li>
+				<li><code>:has()</code> ✅</li>
 			</ol>
 			<h3>Separate pages</h3>
 			<ol>
 				<li>color scheme ✅</li>
-				<li>subgrid</li>
+				<li>subgrid ✅</li>
 				<li>container queries &amp; units</li>
 			</ol>
 
@@ -461,10 +461,12 @@ body #accent-color .accent2 {
 			</section>
 
 			<section id="css-has">
-				<h2><code>:has()</code> - FINISH</h2>
+				<h2><code>:has()</code></h2>
 				<p>From MDN: "The functional :has() CSS pseudo-class represents an element if any of the relative selectors that are passed as an argument match at least one element when anchored against this element. This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument."</p>
 
-				<h3><code>:has()</code> as a parent selector</h3>
+				<h3>A parent selector</h3>
+
+				<p>In this example, we are adding a top margin <em>only</em> if the card has an image. This creates a more uniform style for when the card doesn't have an image. We're using an exaggerated margin on the image cards to easily see a difference.</p>
 
 				<div class="container">
 					<div class="row gap">
@@ -506,15 +508,168 @@ body #accent-color .accent2 {
 	}
 }</code></pre>
 
-				<h3>Use <code>:has()</code> to change a layout based on contents</h3>
+				<h3 class="mt-5">Change parent and child based on parent contents</h3>
 
-				<pre><code class="lang-css">.card:has(img) {
-	h2, h3, h4, h5, h6 {
-		margin-top: 2rem;
+				<p>In this example we'll apply different styling to an image based on whether it has a caption.</p>
+
+				<div class="container">
+					<div class="row gap">
+						<div class="col text-image">
+							<h4>Example without caption</h4>
+							<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
+							<img src="assets/cb11.jpg" alt="cherry blossoms at UW">
+							<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
+						</div>
+
+						<div class="col text-image">
+							<h4>Example with caption</h4>
+							<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
+							<figure>
+								<img src="assets/cb12.jpg" alt="cherry blossoms at UW">
+								<figcaption>Cherry blossoms on the Quad at UW</figcaption>
+							</figure>
+
+							<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
+						</div>
+					</div>
+				</div>
+
+				<pre class="mt-5"><code class="lang-css">/* All images */
+.text-image {
+	border: 1px solid var(--wp--preset--color--spirit-pink);
+	padding: 1rem;
+
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+}
+
+/* Images with figcaptions, style the container and change the image styling */
+.text-image:has(figcaption) {
+	border: 1px solid var(--wp--preset--color--spirit-teal);
+	background-color: #efefef;
+
+	figure {
+		border: 1px solid var(--wp--preset--color--spirit-candle-green);
+		padding: 1rem;
+		background-color: white;
+
+		img {
+			margin-bottom: 0.5rem;
+		}
+
+		figcaption {
+			font-style: italic;
+			font-weight: bold;
+		}
 	}
 }</code></pre>
 
-				<h3>Show an error message if a form has an error</h3>
+				<h3 class="mt-5">Show an error message outside your form if something happens inside your form, using only CSS</h3>
+
+				<p>This example shows how you can toggle content based on form actions without using JavaScript.</p>
+
+				<p>Check the "Agree to terms and conditions" box below to see the example error message.</p>
+
+				<div class="form-example">
+				<div class="error alert alert-danger">
+					<p>Hello! Only show me if the box is checked!</p>
+				</div>
+				<form class="row mt-5 mb-5 g-3 needs-validation" novalidate>
+					<div class="col-md-4">
+						<label for="validationCustom01" class="form-label">First name</label>
+						<input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						</div>
+						<div class="col-md-4">
+						<label for="validationCustom02" class="form-label">Last name</label>
+						<input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						</div>
+						<div class="col-md-4">
+						<label for="validationCustomUsername" class="form-label">Username</label>
+						<div class="input-group has-validation">
+							<span class="input-group-text" id="inputGroupPrepend">@</span>
+							<input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+							<div class="invalid-feedback">
+							Please choose a username.
+							</div>
+						</div>
+						</div>
+						<div class="col-md-6">
+						<label for="validationCustom03" class="form-label">City</label>
+						<input type="text" class="form-control" id="validationCustom03" required>
+						<div class="invalid-feedback">
+							Please provide a valid city.
+						</div>
+						</div>
+						<div class="col-md-3">
+						<label for="validationCustom04" class="form-label">State</label>
+						<select class="form-select" id="validationCustom04" required>
+							<option selected disabled value="">Choose...</option>
+							<option>...</option>
+						</select>
+						<div class="invalid-feedback">
+							Please select a valid state.
+						</div>
+						</div>
+						<div class="col-md-3">
+						<label for="validationCustom05" class="form-label">Zip</label>
+						<input type="text" class="form-control" id="validationCustom05" required>
+						<div class="invalid-feedback">
+							Please provide a valid zip.
+						</div>
+						</div>
+						<div class="col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+							<label class="form-check-label" for="invalidCheck">
+							Agree to terms and conditions
+							</label>
+							<div class="invalid-feedback">
+							You must agree before submitting.
+							</div>
+						</div>
+						</div>
+						<div class="col-12">
+						<button class="btn btn-primary" type="submit">Submit form</button>
+						</div>
+					</form>
+				</div>
+
+				<p>First, let's see our markup:</p>
+
+				<pre><code class="lang-html">&lt;div class="form-example"&gt;
+	&lt;div class="error alert alert-danger"&gt;
+		&lt;p&gt;Hello! Only show me if the box is checked!&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;form class="row mt-5 mb-5 g-3 needs-validation" novalidate&gt;
+		...
+	&lt;/form&gt;
+&lt;/div&gt;</code></pre>
+
+				<p class="mt-5">And here is the CSS to make this work:</p>
+
+				<pre><code class="lang-css">.form-example:has(input:checked) {
+	.error {
+		display: block;
+	}
+}
+.form-example:not(:has(input:checked)) {
+	.error {
+		display: none;
+	}
+}</code></pre>
+
+				<div class="mt-5 tip"><h4>💡 Tip: additional functional pseudo-classes</h4>
+					<p><code>:is()</code>, <code>:where()</code>, and <code>:not()</code> are the other functional pseudo-classes. They can be used with <code>:has()</code> and each other. Have you used these yet?</p>
+				</div>
 
 			</section>
 		</main>

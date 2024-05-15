@@ -256,6 +256,56 @@ body {
 				margin-top: 2rem;
 			}
 		}
+
+		/* All images */
+		.text-image {
+			border: 1px solid var(--wp--preset--color--spirit-pink);
+			padding: 1rem;
+
+			img {
+				width: 100%;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+		}
+
+		/* Images with figcaptions, style the container and change the image styling */
+		.text-image:has(figcaption) {
+			border: 1px solid var(--wp--preset--color--spirit-teal);
+			background-color: #efefef;
+
+			figure {
+				border: 1px solid var(--wp--preset--color--spirit-candle-green);
+				padding: 1rem;
+				background-color: white;
+
+				img {
+					margin-bottom: 0.5rem;
+				}
+
+				figcaption {
+					font-style: italic;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.form-example form {
+			border: 1px solid var(--wp--preset--color--husky-purple);
+			background-color: #efefef;
+			padding: 2rem;
+		}
+
+		.form-example:has(input:checked) {
+			.error {
+				display: block;
+			}
+		}
+		.form-example:not(:has(input:checked)) {
+			.error {
+				display: none;
+			}
+		}
 	}
 
 	#margin-inline {
@@ -451,5 +501,11 @@ body {
 			}
 		}
 
+	}
+
+	.tip {
+		border: 1px solid var(--wp--preset--color--husky-metallic-gold);
+		background-color: var(--wp--preset--color--husky-light-gold);
+		padding: 2rem;
 	}
 }
