@@ -56,6 +56,31 @@ body {
 			font-size: 1.5rem;
 		}
 
+		@media screen and (max-width: 992px) {
+			nav {
+				.container {
+					display: block;
+
+					.navbar-nav {
+						margin-top: 10px;
+						flex-direction: row;
+
+						li {
+							a {
+								padding-right: 10px;
+							}
+
+							&:last-of-type {
+								a {
+									padding-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		a.navbar-brand:hover,
 		a.navbar-brand:active,
 		a.navbar-brand:focus {
@@ -63,10 +88,6 @@ body {
 			text-decoration: underline;
 			text-decoration-thickness: 2px;
 			text-underline-offset: 10px;
-		}
-
-		.nav-item a {
-			/* text-decoration: underline; */
 		}
 
 		.nav-item a.active,
@@ -588,6 +609,18 @@ body {
 			}
 		}
 
+		.full-page {
+			background-color: #efefef;
+			padding: 2rem;
+			display: grid;
+			grid-template-columns: 2fr minmax(400px, 1fr);
+			gap: 2rem;
+
+			@media screen and (max-width: 992px) {
+				grid-template-columns: 1fr;
+			}
+		}
+
 		@container social (min-width: 450px) {
 			.label {
 				display: block;
@@ -604,6 +637,86 @@ body {
 			h4 {
 				font-size: max(1.5em, 1.23em + 2cqi);
 			}
+		}
+	}
+
+	#object-fit {
+		.custom-cards {
+			display: flex;
+			margin: 0 -0.5em;
+		}
+		.custom-card {
+			margin: 0.75em;
+			width: 33.33%;
+			border-radius: 1em;
+			height: auto;
+			box-shadow: 0 0 4px -2px var(--wp--preset--color--black);
+			background-color: var(--wp--preset--color--white);
+			&.cover {
+				img {
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+			&.better {
+				height: 25em;
+				/* div {height: 50%} */
+				img {
+					border-radius: 1em 1em 0 0;
+					/* overflow: hidden; */
+					height: 50%;
+					object-position: center bottom;
+				}
+			}
+			.custom-card-body {
+				padding: 0.5em;
+			}
+		}
+	}
+
+	/* this relates to the #scroll-margin examples */
+	#object-fit,
+	#text-wrap-balance {
+		scroll-margin-top: 5em;
+	}
+
+	#scroll-margin {
+		.form-switch {
+			margin-block: 1em;
+		}
+		.scroll-container {
+			border: 1px solid black;
+			width: 25em;
+			height: 20em;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			scroll-snap-type: y mandatory;
+
+			.box {
+				flex: 0 0 20em;
+				width: 20em;
+				background-color: var(--wp--preset--color--husky-metallic-gold);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				scroll-snap-align: start;
+				font-size: 18px;
+				font-weight: 800;
+				scroll-margin: 0;
+				scroll-snap-stop: always;
+			}
+		}
+		.scroll-container > .box:nth-child(2) {
+			scroll-margin: 1em;
+		}
+		.scroll-container > .box:nth-child(3) {
+			scroll-margin: 2em;
+		}
+		.scroll-container > .box:nth-child(5) {
+			scroll-margin: 4em;
 		}
 	}
 }
