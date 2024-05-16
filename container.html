@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Container Queries &amp; Units &mdash; A guided tour of cutting-edge CSS you can use now</title>
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="prism/prism.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg has-husky-purple-background-color">
+				<div class="container">
+					<div class="d-flex">
+						<a href="https://www.washington.edu/"><img class="logo" src="assets/W-Logo_White.png" alt="UW logo" width="80"></a>
+						<a class="navbar-brand has-white-color" href="index.html">FET May 2024</a>
+					</div>
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link has-white-color" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="color-scheme.html">Color Scheme</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="subgrid.html">Subgrid</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color active" href="container.html">Container Q&U</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-white-color" href="resources.html">Resources</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main class="container">
+			<h1>Container Queries &amp; Units</h1>
+			<section id="container-queries">
+				<p><em>It's important to mention that these examples are in no way exhaustive (though they may be exhausting). Hopefully these will inspire you to see the potential, learn more, and try new things.</em></p>
+
+				<p>Traditionally, we have adjusted sizes and layouts based on device and browser size using media queries. Now, we can use container queries and units to adjust components based on the component size.</p>
+
+				<p>There are three <code>container-type</code> values: <code>size</code>, <code>inline-size</code>, and <code>normal</code>. <code>size</code> and <code>inline-size</code> are used for adjusting block and inline dimenions of the container. <code>normal</code> is only used for style queries.</p>
+
+				<h2>Use case: Social feed</h2>
+				<p>In this example we will hide labels when the container is not small enough to support them, using <code>inline-size</code>.</p>
+
+				<p>Open up your Dev Tools and look at the code for this example. If you're using Chrome, you'll see a container label next to <code>&lt;div class="social mb-5"&gt;&lt;/div&gt;</code>. If you click that it will outline the container and the label elements that are affected by the container query!</p>
+
+				<p>Shrink your browser window or use your Dev Tools to adjust the window size to see the action labels at the bottom of the post disappear and reappear as space requires and allows.</p>
+
+				<div class="social mb-5">
+					<div class="post">
+						<div class="heading">
+							<img class="profile-pic" src="assets/dubs.jpg" alt="Dubs!">
+							<div class="personal-info">
+								<h4>Dubs Husky</h4>
+								<p>Official Good Boy</p>
+							</div>
+						</div>
+						<div class="content">
+							<p>Cotton candy chupa chups shortbread donut croissant. Marshmallow oat cake donut biscuit gummi bears jelly-o oat cake halvah. Gingerbread sesame snaps jelly-o tootsie roll wafer jujubes jujubes donut sugar plum. Liquorice gummi bears candy canes sesame snaps cupcake pudding.</p>
+							<img src="assets/cb12.jpg" alt="I'm your cherry blossom baby.">
+						</div>
+						<div class="actions">
+							<img class="profile-icon" src="assets/dubs.jpg" alt="profile icon">
+							<div><i class="bi bi-heart"></i><span class="label">Like</span></div>
+							<div><i class="bi bi-chat-quote"></i><span class="label">Comment</span></div>
+							<div><i class="bi bi-repeat"></i><span class="label">Repost</span></div>
+							<div><i class="bi bi-share"></i><span class="label">Share</span></div>
+						</div>
+					</div>
+				</div>
+
+				<p>Let's see the relevant CSS for the container query:</p>
+
+				<pre><code class="lang-css">.social {
+	container-name: social; /* optional */
+	container-type: inline-size;
+}
+
+@container social (min-width: 450px) {
+	.label {
+		display: block;
+	}
+}
+
+@container social (max-width: 449px) {
+	.label {
+		display: none;
+	}
+}</code></pre>
+
+				<h2 class="mt-5">Container query units</h2>
+				<p>You've likely used viewport units to adjust sizing, perhaps to have a full width and/or full height image. You can now also use query units that are scoped to the container.</p>
+
+				From MDN, the container query length units are:
+
+				<ul>
+					<li><code>cqw</code>: 1% of a query container's width</li>
+					<li><code>cqh</code>: 1% of a query container's height</li>
+					<li><code>cqi</code>: 1% of a query container's inline size</li>
+					<li><code>cqb</code>: 1% of a query container's block size</li>
+					<li><code>cqmin</code>: The smaller value of either cqi or cqb</li>
+					<li><code>cqmax</code>: The larger value of either cqi or cqb</li>
+				</ul>
+
+				<p>A common use case for container units is to adjust the font size based on the container size.</p>
+
+				<p>Shrink your browser window or use your Dev Tools to adjust the window size to see the "Dubs Husky" text size adjust based on the size of the container.</p>
+
+				<div class="social query-units mb-5">
+					<div class="post">
+						<div class="heading">
+							<img class="profile-pic" src="assets/dubs.jpg" alt="Dubs!">
+							<div class="personal-info">
+								<h4>Dubs Husky</h4>
+								<p>Official Good Boy</p>
+							</div>
+						</div>
+						<div class="content">
+							<p>Cotton candy chupa chups shortbread donut croissant. Marshmallow oat cake donut biscuit gummi bears jelly-o oat cake halvah. Gingerbread sesame snaps jelly-o tootsie roll wafer jujubes jujubes donut sugar plum. Liquorice gummi bears candy canes sesame snaps cupcake pudding.</p>
+							<img src="assets/cb12.jpg" alt="I'm your cherry blossom baby.">
+						</div>
+						<div class="actions">
+							<img class="profile-icon" src="assets/dubs.jpg" alt="profile icon">
+							<div><i class="bi bi-heart"></i><span class="label">Like</span></div>
+							<div><i class="bi bi-chat-quote"></i><span class="label">Comment</span></div>
+							<div><i class="bi bi-repeat"></i><span class="label">Repost</span></div>
+							<div><i class="bi bi-share"></i><span class="label">Share</span></div>
+						</div>
+					</div>
+				</div>
+
+				<p>The relevant CSS to accomplish this:</p>
+
+				<pre><code class="lang-css">.query-units {
+	container-name: query-units; /* optional */
+	container-type: inline-size;
+}
+
+@container query-units (max-width: 500px) {
+	h4 {
+		font-size: max(1.5em, 1.23em + 2cqi);
+	}
+}</code></pre>
+
+			</section>
+
+		</main>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="prism/prism.js"></script>
+	</body>
+</html>
