@@ -198,6 +198,9 @@ body {
 	}
 
 	#outline-offset {
+
+		/* scroll-margin-top: 5em; */
+
 		.element-to-offset {
 			padding: .75em;
 			margin-right: 2em;
