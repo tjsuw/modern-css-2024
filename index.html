@@ -11,7 +11,7 @@
 		<link rel="icon" href="./favicon.ico" type="image/x-icon">
 	</head>
 	<body>
-		<header>
+		<header id="header">
 			<nav class="navbar navbar-expand-lg has-husky-purple-background-color">
 				<div class="container">
 					<div class="d-flex">
@@ -52,13 +52,13 @@
 			<h3>All below</h3>
 			<ol>
 				<li>Balance headlines/text ✅</li>
-				<li>object fit</li>
+				<li>object fit ✅</li>
 				<li>aspect ratio ✅</li>
-				<li><a href="#margin-inline">margin inline</a></li>
+				<li>margin inline ✅</li>
 				<li>text-underline-offset ✅</li>
 				<li>outline offset ✅</li>
-				<li>Scroll margin top/bottom</li>
-				<li>fit content width</li>
+				<li>Scroll margin top/bottom ✅</li>
+				<li>fit content width ✅</li>
 				<li>CSS nesting ✅</li>
 				<li>accent color ✅</li>
 				<li><code>:has()</code> ✅</li>
@@ -104,6 +104,117 @@ h1, h2, h3, h4, h5, h6 {
 .pretty {
 	text-wrap: pretty;
 }</code></pre>
+				</div>
+			</section>
+
+			<section id="object-fit">
+				<h2>Object fit</h2>
+				<p>Move over <code>background-image</code>! Now we can use <code>{ object-fit: cover; }</code> to get a similar result. It makes an image behave like a background image, but with the advantage of retaining the semantics of an <code>img</code> tag. We can also use <code>{ object-fit: scale-down; }</code>. The image acts as a container for its own contents.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example green">
+							<h3>Images set inside some custom (non-Bootstrap) cards</h3>
+							<div class="custom-cards">
+								<div class="custom-card">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+										<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>300x200</strong>.</p>
+									</div>
+								</div>
+								<div class="custom-card">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>125x188</strong>.</p>
+									</div>
+								</div>
+								<div class="custom-card">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>400x400</strong>.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	/* nothing set...image will break outside of its containing element, if it needs to */
+}</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="row gap">
+						<div class="col example green">
+							<h3>Images set inside custom cards, but better</h3>
+							<div class="custom-cards">
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+									<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+									</div>
+								</div>
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+									</div>
+								</div>
+								<div class="custom-card cover">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	object-fit: cover;
+	width: 100%;
+}</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="row gap">
+						<div class="col example green">
+							<h3>And taking it one step further</h3>
+							<div class="custom-cards">
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+									<div class="custom-card-body">
+										<h4>Custom card 1</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+									</div>
+								</div>
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+									<div class="custom-card-body">
+										<h4>Custom card 2</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+									</div>
+								</div>
+								<div class="custom-card cover better">
+									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+									<div class="custom-card-body">
+										<h4>Custom card 3</h4>
+										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<pre><code class="lang-css">img {
+	object-fit: cover;
+	width: 100%;
+	border-radius: 1em 1em 0 0;
+	height: 50%;
+	object-position: center bottom;
+}</code></pre>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -340,43 +451,99 @@ img {
 						</div>
 					</div>
 				</div>
-		</section>
+			</section>
 
-		<section id="outline-offset">
-			<h2>Outline offset</h2>
-			<p>
-				Adding <code>outline-offset</code> to an element pushes the outline away by the value you give the property. Using a negative value pulls the outline into the element.
-			</p>
-			<div class="container">
-				<div class="row gap">
-					<div class="col example purple has-white-background-color">
-						<h3 class="mb-4">The general idea</h3>
-						<p>
-							<span class="element-to-offset">This has a positive offset</span>
-							<span class="element-to-offset o-offset-n">This has a negative offset</span>
-						</p>
+			<section id="outline-offset">
+				<h2>Outline offset</h2>
+				<p>
+					Adding <code>outline-offset</code> to an element pushes the outline away by the value you give the property. Using a negative value pulls the outline into the element.
+				</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example purple has-white-background-color">
+							<h3 class="mb-4">The general idea</h3>
+							<p>
+								<span class="element-to-offset">This has a positive offset</span>
+								<span class="element-to-offset o-offset-n">This has a negative offset</span>
+							</p>
+						</div>
+					</div>
+					<div class="row gap">
+						<div class="col example purple has-white-background-color">
+							<h3>Links in a paragraph</h3>
+							<p>This first link has <a href="#">no outline-offset on focus</a>! Here's some more text so we can see it in action among <a href="#" class="o-offset-p black">other links that have</a> outline-offset on focus. And were we to keep tabbing through a paragraph - <a href="#" class="o-offset-p black">here's a link to another place</a>.
+							</p>
+						</div>
+						<div class="col example purple has-white-background-color">
+							<h3>Buttons</h3>
+							<p>
+								Here are some things we can do with buttons and adding outline-offset on focus.
+							</p>
+							<p>
+								<button type="button" class="p-2 o-offset-p">Plain button - outside</button></p>
+								<button type="button" class="p-2 o-offset-n">Plain button - inside</button></p>
+								<button type="button" class="btn btn-info o-offset-p">Bootstrap btn - outside</button></p>
+								<button type="button" class="btn btn-info o-offset-n">Bootstrap btn - inside</button></p>
+						</div>
 					</div>
 				</div>
-				<div class="row gap">
-					<div class="col example purple has-white-background-color">
-						<h3>Links in a paragraph</h3>
-						<p>This first link has <a href="#">no outline-offset on focus</a>! Here's some more text so we can see it in action among <a href="#" class="o-offset-p black">other links that have</a> outline-offset on focus. And were we to keep tabbing through a paragraph - <a href="#" class="o-offset-p black">here's a link to another place</a>.
-						</p>
-					</div>
-					<div class="col example purple has-white-background-color">
-						<h3>Buttons</h3>
-						<p>
-							Here are some things we can do with buttons and adding outline-offset on focus.
-						</p>
-						<p>
-							<button type="button" class="p-2 o-offset-p">Plain button - outside</button></p>
-							<button type="button" class="p-2 o-offset-n">Plain button - inside</button></p>
-							<button type="button" class="btn btn-info o-offset-p">Bootstrap btn - outside</button></p>
-							<button type="button" class="btn btn-info o-offset-n">Bootstrap btn - inside</button></p>
+			</section>
+
+			<section id="scroll-margin">
+				<h2>Scroll margin top/bottom</h2>
+				<p>Scroll margin (<code>scroll-margin</code>) sets the scroll margins of an element inside its container. Each child element of a container has a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Snap_positions">snap position</a>. <code>scroll-margin</code> lets us tinker that position as if the child element has a margin.</p>
+				<div class="container">
+					<div class="row gap">
+						<div class="col example teal">
+							<h3>Child elements stacked vertically</h3>
+							<div class="scroll-container mb-3">
+								<div class="box has-husky-light-gold-background-color">1</div>
+								<div class="box has-spirit-candle-green-background-color">2</div>
+								<div class="box has-husky-purple-background-color has-white-color">3</div>
+								<div class="box has-spirit-metallic-gold-background-color has-white-color">4</div>
+								<div class="box has-husky-light-gold-background-color">5</div>
+								<div class="box has-spirit-pink-background-color has-white-color">6</div>
+							</div>
+							<p>What's going on here, in a nutshell:</p>
+<pre><code class="lang-css">.scroll-container {
+	.box-1 {scroll-margin: 0;}
+	.box-2 {scroll-margin: 1em;}
+	.box-3 {scroll-margin: 2em;}
+	.box-4 {scroll-margin: 0;}
+	.box-5 {scroll-margin: 4em;}
+	.box-6 {scroll-margin: 0;}
+}
+</code></pre>
+
+						</div>
+						<div class="col example teal">
+							<h3>On this page</h3>
+							<p>These elements don't have a <code>scroll-margin</code>.</p>
+							<ul>
+								<li><a href="#outline-offset">Scroll to Outline offset</a></li>
+								<li><a href="#text-underline-offset">Scroll to Text underline offset</a></li>
+							</ul>
+							<p>These two elements <strong>do</strong> have a <code>scroll-margin</code> of <code>8em</code>.</p>
+							<ul>
+								<li><a href="#text-wrap-balance">Scroll to Text wrap balance</a></li>
+								<li><a href="#object-fit">Scroll to Object fit</a></li>
+							</ul>
+							<div class="form-check form-switch">
+								<input onClick="toggleMe(this);" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked value="false">
+								<label class="form-check-label" for="flexSwitchCheckChecked">Toggle sticky <code>header</code> and try each of these.</label>
+							</div>
+							<p>Here's where <code>scroll-margin</code> is in play:</p>
+<pre><code class="lang-css">#object-fit,
+#text-wrap-balance {
+	scroll-margin-top: 5em;
+}
+</code></pre>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+
 
 			<section id="accent-color">
 				<h2>Accent color</h2>
@@ -678,5 +845,6 @@ body #accent-color .accent2 {
 		</main>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="prism/prism.js"></script>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>
