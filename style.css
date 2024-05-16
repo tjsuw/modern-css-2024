@@ -56,6 +56,31 @@ body {
 			font-size: 1.5rem;
 		}
 
+		@media screen and (max-width: 992px) {
+			nav {
+				.container {
+					display: block;
+
+					.navbar-nav {
+						margin-top: 10px;
+						flex-direction: row;
+
+						li {
+							a {
+								padding-right: 10px;
+							}
+
+							&:last-of-type {
+								a {
+									padding-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		a.navbar-brand:hover,
 		a.navbar-brand:active,
 		a.navbar-brand:focus {
@@ -63,10 +88,6 @@ body {
 			text-decoration: underline;
 			text-decoration-thickness: 2px;
 			text-underline-offset: 10px;
-		}
-
-		.nav-item a {
-			/* text-decoration: underline; */
 		}
 
 		.nav-item a.active,
@@ -591,6 +612,18 @@ body {
 			}
 		}
 
+		.full-page {
+			background-color: #efefef;
+			padding: 2rem;
+			display: grid;
+			grid-template-columns: 2fr minmax(400px, 1fr);
+			gap: 2rem;
+
+			@media screen and (max-width: 992px) {
+				grid-template-columns: 1fr;
+			}
+		}
+
 		@container social (min-width: 450px) {
 			.label {
 				display: block;
@@ -664,7 +697,7 @@ body {
 			flex-direction: column;
 			padding: 0;
 			scroll-snap-type: y mandatory;
-	
+
 			.box {
 				flex: 0 0 20em;
 				width: 20em;

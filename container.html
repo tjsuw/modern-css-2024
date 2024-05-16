@@ -55,6 +55,8 @@
 
 				<p>Shrink your browser window or use your Dev Tools to adjust the window size to see the action labels at the bottom of the post disappear and reappear as space requires and allows.</p>
 
+				<p><em>This is an example inspired by the LinkedIn feed.</em></p>
+
 				<div class="social mb-5">
 					<div class="post">
 						<div class="heading">
@@ -94,6 +96,64 @@
 @container social (max-width: 449px) {
 	.label {
 		display: none;
+	}
+}</code></pre>
+
+				<h2 class="mt-5">Example as a sidebar</h2>
+
+				<p>Let's look at this same sample as a sidebar.</p>
+
+				<div class="full-page">
+					<div class="primary">
+						<h3>Main page content</h3>
+						<p>Cat ipsum dolor sit amet, the cat was chasing the mouse why must they do that so stretch but yowling nonstop the whole night. Slap owner's face at 5am until human fills food dish to pet a cat, rub its belly, endure blood and agony, quietly weep, keep rubbing belly and chew the plant for fall over dead (not really but gets sypathy) but i show my fluffy belly but it's a trap!</p>
+
+						<p>if you pet it i will tear up your hand catch eat throw up catch eat throw up bad birds. Eat the fat cats food please stop looking at your phone and pet me. Cat playing a fiddle in hey diddle diddle?.</p>
+
+						<p>This human feeds me, i should be a god cat milk copy park pee walk owner escape bored tired cage droppings sick vet vomit or get video posted to internet for chasing red dot when owners are asleep, cry for no apparent reason mark territory walk on car leaving trail of paw prints on hood and windshield, or oooo! dangly balls! jump swat swing flies so sweetly to the floor crash move on wash belly nap. Kitty loves pigs meow all night having their mate disturbing sleeping humans for sees bird in air, breaks into cage and attacks creature. Scratch so owner bleeds meowsiers.</p>
+
+						<p>Grab pompom in mouth and put in water dish. Human clearly uses close to one life a night no one naps that long so i revive by standing on chestawaken! hiding behind the couch until lured out by a feathery toy, sit as close as possible to warm fire without sitting on cold floor but hack up furballs fall over dead (not really but gets sypathy) touch water with paw then recoil in horror. It's 3am, time to create some chaos jump five feet high and sideways when a shadow moves. Mmmmmmmmmeeeeeeeeooooooooowwwwwwww headbutt owner's knee present belly, scratch hand when stroked yet plop down in the middle where everybody walks and demand to be let outside at once, and expect owner to wait for me as i think about it.</p>
+					</div>
+					<div class="sidebar">
+						<h3 class="h4">Social feed</h3>
+						<div class="social mb-5">
+							<div class="post">
+								<div class="heading">
+									<img class="profile-pic" src="assets/dubs.jpg" alt="Dubs!">
+									<div class="personal-info">
+										<h4>Dubs Husky</h4>
+										<p>Official Good Boy</p>
+									</div>
+								</div>
+								<div class="content">
+									<p>Cotton candy chupa chups shortbread donut croissant. Marshmallow oat cake donut biscuit gummi bears jelly-o oat cake halvah. Gingerbread sesame snaps jelly-o tootsie roll wafer jujubes jujubes donut sugar plum. Liquorice gummi bears candy canes sesame snaps cupcake pudding.</p>
+									<img src="assets/cb12.jpg" alt="I'm your cherry blossom baby.">
+								</div>
+								<div class="actions">
+									<img class="profile-icon" src="assets/dubs.jpg" alt="profile icon">
+									<div><i class="bi bi-heart"></i><span class="label">Like</span></div>
+									<div><i class="bi bi-chat-quote"></i><span class="label">Comment</span></div>
+									<div><i class="bi bi-repeat"></i><span class="label">Repost</span></div>
+									<div><i class="bi bi-share"></i><span class="label">Share</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5">This example combines media queries and container queries. You can see how they work together and how the container content adjusts based on the size of the container at various screen widths.</p>
+
+				<p>Here is the new CSS to support the page layout. The container query CSS remains the same from our previous example. Adjust your window size or use the Dev Tools to adjust the size and see when you see the action labels and when they hide.</p>
+
+				<pre><code class="lang-css">.full-page {
+	background-color: #efefef;
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: 2fr minmax(400px, 1fr);
+	gap: 2rem;
+
+	@media screen and (max-width: 992px) {
+		grid-template-columns: 1fr;
 	}
 }</code></pre>
 
