@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+
 body {
 	/* colors pulled from the WP theme for the block editor */
 	--wp--preset--color--primary: #4b2e83;
@@ -47,6 +49,16 @@ body {
 	.has-true-black-background-color { background-color: var(--wp--preset--color--true-black) !important; }
 	.has-gray-background-color { background-color: var(--wp--preset--color--gray) !important; }
 
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	/*font-variation-settings: "wdth" 100;*/
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Slab", serif !important;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
 	header {
 		.logo {
 			margin-bottom: -12px;
@@ -102,7 +114,7 @@ body {
 	}
 
 	main {
-		margin-top: 30px;
+		padding-top: 30px;
 		margin-bottom: 80px;
 	}
 
@@ -722,4 +734,90 @@ body {
 			scroll-margin: 4em;
 		}
 	}
+
+	/* intro and table of contents */
+	.card {
+		&.toc {
+			border-radius: 1em;
+			border: none;
+			border-bottom: 30px solid var(--wp--preset--color--spirit-candle-green);
+			height: auto;
+			box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+			background-color: var(--wp--preset--color--white);
+			padding: 2em;
+		}
+		i {
+			font-size: 5em;
+			text-align: center;
+			color: var(--wp--preset--color--husky-purple);
+		}
+	}
+
+	.svg-wavy {
+		overflow: hidden;
+		position: relative;
+		height: 175px;
+	}
+	.svg-wavy::before{
+		content:'';
+		position: absolute;
+		z-index: -3;
+		pointer-events: none;
+		background-repeat: no-repeat;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		background-size: cover;
+		background-position: 50% 50%;
+		background-image: url('assets/wavy-divider.svg');
+	}
+	.svg-wavy-accent-green::before {
+		background-image: url('assets/wavy-divider-accent-green.svg');
+	}
+	.svg-wavy-accent-lavender::before {
+		background-image: url('assets/wavy-divider-accent-lavender.svg');
+	}
+	.svg-wavy-accent-pink::before {
+		background-image: url('assets/wavy-divider-accent-pink.svg');
+	}
+	.svg-wavy-accent-teal::before {
+		background-image: url('assets/wavy-divider-accent-teal.svg');
+		background-position: 100% 50%;
+	}
+	.svg-wavy-sp-gold::before {
+		background-image: url('assets/wavy-divider-sp-gold.svg');
+		background-position: 100% 50%;
+	}
+
+	/* svgs for backgrounds */
+	.svg-intro {
+		/*overflow:hidden;*/
+		position:relative;
+	}
+	.svg-intro::before{
+		content:'';
+		position: absolute;
+		z-index: -3;
+		pointer-events: none;
+		background-repeat: no-repeat;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: -1.25em;
+		background-size: 100%;
+		background-position: 50% 0;
+		background-image: url('assets/bus-scene.svg');
+	}
+
+	@media (max-width: 800px) {
+		.svg-intro::before{
+			background-image: url('assets/bus-scene-mobile.svg');
+		}
+		.svg-wavy {
+			position: relative;
+			height: 100px;
+		}
+	}
+
 }
