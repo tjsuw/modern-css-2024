@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="prism/prism.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 		<link rel="icon" href="./favicon.ico" type="image/x-icon">
 	</head>
 	<body>
@@ -38,57 +39,91 @@
 				</div>
 			</nav>
 		</header>
-		<main class="container">
-			<h1>A guided tour of cutting-edge CSS you can use now</h1>
-			<p>Welcome to a tour of cutting-edge CSS you can use now. These examples were inspired by this article: <a href="https:/web.dev/articles/5-css-snippets-every-front-end-developer-should-know-in-2024">5 CSS snippets every front-end developer should know in 2024</a>. Front-end web developer Teri Shelton, in collaboration with designer Andy Krikawa, put together these examples.</p>
+		<main class="container-fluid">
+			<div class="container">
+				<h1>A guided tour of cutting-edge CSS you can use now</h1>
+				<p>Welcome to a tour of cutting-edge CSS you can use now. These examples were inspired by this article: <a href="https:/web.dev/articles/5-css-snippets-every-front-end-developer-should-know-in-2024">5 CSS snippets every front-end developer should know in 2024</a>. Front-end web developer Teri Shelton, in collaboration with designer Andy Krikawa, put together these examples.</p>
 
-			<p>At the May 21, 2024 Front-End Tech Community of Practice, we'll demonstrate how they work and share some ideas on use cases. There's so much to cover: from subgrid to container queries and :has() to color-scheme... and more! It's going to be like a guided tour of favorite sites: stop, look at the view, snap a photo (screenshot!), ask a question, hop back on the bus.</p>
-
-			<h2>Table of Contents</h2>
-			<h3>All below</h3>
-			<ol>
-				<li>Balance headlines/text ✅</li>
-				<li>object fit ✅</li>
-				<li>aspect ratio ✅</li>
-				<li>margin inline ✅</li>
-				<li>text-underline-offset ✅</li>
-				<li>outline offset ✅</li>
-				<li>Scroll margin top/bottom ✅</li>
-				<li>fit content width ✅</li>
-				<li>CSS nesting ✅</li>
-				<li>accent color ✅</li>
-				<li><code>:has()</code> ✅</li>
-			</ol>
-			<h3>Separate pages</h3>
-			<ol>
-				<li>color scheme ✅</li>
-				<li>subgrid ✅</li>
-				<li>container queries &amp; units ✅</li>
-			</ol>
-
-
-			<section id="text-wrap-balance">
-				<h2>Balance headlines &amp; text</h2>
-				<p>Balance headlines and small amounts of text automatically to have more balance across multiple lines (<code>balance</code>) and not have orphans (<code>pretty</code>).</p>
-				<p>Balance is only supported for 6 or fewer lines in Chromium and 10 or fewer lines in Firefox.</p>
-				<p>Adjust your window size to see how these examples wrap differently based on their <code>text-wrap</code> property.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example teal">
-							<p class="h1">This is a sample headline that is completely normal - nothing to see here</p>
-							<p>Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
-						</div>
-						<div class="col example teal">
-							<p class="h1 balance">This is a sample headline with balanced text wrap set to balance</p>
-							<p class="balance">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
-						</div>
-						<div class="col example teal">
-							<p class="h1 pretty">This is a sample headline with balanced text wrap set to pretty</p>
-							<p class="pretty">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+				<p>At the May 19, 2024 Front-End Tech Community of Practice, we'll demonstrate how they work and share some ideas on use cases. There's so much to cover: from subgrid to container queries and :has() to color-scheme... and more! It's going to be like a guided tour of favorite sites: stop, look at the view, snap a photo (screenshot!), ask a question, hop back on the bus.</p>
+			</div>
+			<div class="row py-5 svg-intro">
+				<div class="col">
+					<div class="container pt-5 px-0 px-lg-5">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4 px-4 mb-4">
+								<div class="card toc h-100 my-0 my-lg-2">
+									<div class="text-center mb-2">
+										<img src="./assets/bus-loading.svg" alt="" />
+									</div>
+									<h2 class="my-3">All aboard</h2>
+									<ol>
+										<li><a href="#text-wrap-balance">Balance headlines/text</a></li>
+										<li><a href="#object-fit">Object fit</a></li>
+										<li><a href="#aspect-ratio">Aspect ratio</a></li>
+										<li><a href="#margin-inline">Margin inline</a></li>
+										<li><a href="#text-underline-offset">Text underline offset</a></li>
+										<li><a href="#outline-offset">Outline offset</a></li>
+									</ol>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 px-4 mb-4">
+								<div class="card toc h-100 my-0 my-lg-2">
+									<div class="text-center mb-2">
+										<img src="./assets/to-the-top.svg" alt="" />
+									</div>
+									<h2 class="my-3">Reach the peak</h2>
+									<ol>
+										<li><a href="#scroll-margin">Scroll margin top/bottom</a></li>
+										<li><a href="#fit-content-width">Fit content width</a></li>
+										<li><a href="#css-nesting">CSS nesting</a></li>
+										<li><a href="#accent-color">Accent color</a></li>
+										<li><a href="./color-scheme.html">Color scheme</a></li>
+										<li><a href="#css-has"><code>:has()</code></a></li>
+									</ol>
+								</div>
+							</div>
+							<div class="col-12 col-lg-4 px-4 mb-4">
+								<div class="card toc h-100 my-0 my-lg-2">
+									<div class="text-center mb-2">
+										<img src="./assets/to-the-castle.svg" alt="" />
+									</div>
+									<h2 class="my-3">Off to the castle</h2>
+									<ol>
+										<li><a href="./subgrid.html">Subgrid</a></li>
+										<li><a href="./container.html">Container queries &amp; units</a></li>
+									</ol>
+								</div>
+							</div>
 						</div>
 					</div>
+				</div>
+				<img class="p-0 svg-wavy" src="assets/wavy-divider-accent-teal.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="text-wrap-balance">
+							<h2>Balance headlines &amp; text</h2>
+							<p>Balance headlines and small amounts of text automatically to have more balance across multiple lines (<code>balance</code>) and not have orphans (<code>pretty</code>).</p>
+							<p>Balance is only supported for 6 or fewer lines in Chromium and 10 or fewer lines in Firefox.</p>
+							<p>Adjust your window size to see how these examples wrap differently based on their <code>text-wrap</code> property.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example teal">
+										<p class="h1">This is a sample headline that is completely normal - nothing to see here</p>
+										<p>Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+									</div>
+									<div class="col example teal">
+										<p class="h1 balance">This is a sample headline with balanced text wrap set to balance</p>
+										<p class="balance">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+									</div>
+									<div class="col example teal">
+										<p class="h1 pretty">This is a sample headline with balanced text wrap set to pretty</p>
+										<p class="pretty">Cat ipsum dolor sit amet, meow meow you are my owner so here is a dead bird cats making all the muffins. Paw your face to wake you up in the morning.</p>
+									</div>
+								</div>
 
-					<p>To enable these <code>text-wrap</code> options:</p>
+								<p>To enable these <code>text-wrap</code> options:</p>
 <pre><code class="lang-css">.balance {
 	text-wrap: balance;
 }
@@ -100,226 +135,238 @@ h1, h2, h3, h4, h5, h6 {
 .pretty {
 	text-wrap: pretty;
 }</code></pre>
-				</div>
-			</section>
-
-			<section id="object-fit">
-				<h2>Object fit</h2>
-				<p>Move over <code>background-image</code>! Now we can use <code>{ object-fit: cover; }</code> to get a similar result. It makes an image behave like a background image, but with the advantage of retaining the semantics of an <code>img</code> tag. We can also use <code>{ object-fit: scale-down; }</code>. The image acts as a container for its own contents.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example green">
-							<h3>Images set inside some custom (non-Bootstrap) cards</h3>
-							<div class="custom-cards">
-								<div class="custom-card">
-									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
-									<div class="custom-card-body">
-										<h4>Custom card 1</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>300x200</strong>.</p>
-									</div>
-								</div>
-								<div class="custom-card">
-									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
-									<div class="custom-card-body">
-										<h4>Custom card 2</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>125x188</strong>.</p>
-									</div>
-								</div>
-								<div class="custom-card">
-									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
-									<div class="custom-card-body">
-										<h4>Custom card 3</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>400x400</strong>.</p>
-									</div>
-								</div>
 							</div>
-							<div>
-								<pre><code class="lang-css">img {
+						</section><!-- #text-wrap-balance -->
+					</div>
+				</div>
+				<img class="mb-1 p-0 svg-wavy" src="assets/wavy-divider-accent-green.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="object-fit">
+							<h2>Object fit</h2>
+							<p>Move over <code>background-image</code>! Now we can use <code>{ object-fit: cover; }</code> to get a similar result. It makes an image behave like a background image, but with the advantage of retaining the semantics of an <code>img</code> tag. We can also use <code>{ object-fit: scale-down; }</code>. The image acts as a container for its own contents.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example green">
+										<h3>Images set inside some custom (non-Bootstrap) cards</h3>
+										<div class="custom-cards">
+											<div class="custom-card">
+												<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+												<div class="custom-card-body">
+													<h4>Custom card 1</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>300x200</strong>.</p>
+												</div>
+											</div>
+											<div class="custom-card">
+												<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+												<div class="custom-card-body">
+													<h4>Custom card 2</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>125x188</strong>.</p>
+												</div>
+											</div>
+											<div class="custom-card">
+												<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+												<div class="custom-card-body">
+													<h4>Custom card 3</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is <strong>400x400</strong>.</p>
+												</div>
+											</div>
+										</div>
+										<div>
+											<pre><code class="lang-css">img {
 	/* nothing set...image will break outside of its containing element, if it needs to */
 }</code></pre>
-							</div>
-						</div>
-					</div>
-					<div class="row gap">
-						<div class="col example green">
-							<h3>Images set inside custom cards, but better</h3>
-							<div class="custom-cards">
-								<div class="custom-card cover">
-									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
-									<div class="custom-card-body">
-									<h4>Custom card 1</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+										</div>
 									</div>
 								</div>
-								<div class="custom-card cover">
-									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
-									<div class="custom-card-body">
-										<h4>Custom card 2</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
-									</div>
-								</div>
-								<div class="custom-card cover">
-									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
-									<div class="custom-card-body">
-										<h4>Custom card 3</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<pre><code class="lang-css">img {
+								<div class="row gap">
+									<div class="col example green">
+										<h3>Images set inside custom cards, but better</h3>
+										<div class="custom-cards">
+											<div class="custom-card cover">
+												<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+												<div class="custom-card-body">
+												<h4>Custom card 1</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+												</div>
+											</div>
+											<div class="custom-card cover">
+												<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+												<div class="custom-card-body">
+													<h4>Custom card 2</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+												</div>
+											</div>
+											<div class="custom-card cover">
+												<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+												<div class="custom-card-body">
+													<h4>Custom card 3</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+												</div>
+											</div>
+										</div>
+										<div>
+											<pre><code class="lang-css">img {
 	object-fit: cover;
 	width: 100%;
 }</code></pre>
-							</div>
-						</div>
-					</div>
-					<div class="row gap">
-						<div class="col example green">
-							<h3>And taking it one step further</h3>
-							<div class="custom-cards">
-								<div class="custom-card cover better">
-									<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
-									<div class="custom-card-body">
-										<h4>Custom card 1</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+										</div>
 									</div>
 								</div>
-								<div class="custom-card cover better">
-									<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
-									<div class="custom-card-body">
-										<h4>Custom card 2</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
-									</div>
-								</div>
-								<div class="custom-card cover better">
-									<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
-									<div class="custom-card-body">
-										<h4>Custom card 3</h4>
-										<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<pre><code class="lang-css">img {
+								<div class="row gap">
+									<div class="col example green">
+										<h3>And taking it one step further</h3>
+										<div class="custom-cards">
+											<div class="custom-card cover better">
+												<img src="./assets/memorial-way-lantern-and-leaves-300w.jpg" alt="top of ornate street lantern in foreground with sun shining through green leaves of trees in background" />
+												<div class="custom-card-body">
+													<h4>Custom card 1</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 300x200.</p>
+												</div>
+											</div>
+											<div class="custom-card cover better">
+												<img src="./assets/memorial-way-pedestrian-path-portrait-125w.jpg" alt="sidewalk with large tall trees lining its sides on a sunny day" />
+												<div class="custom-card-body">
+													<h4>Custom card 2</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 125x188.</p>
+												</div>
+											</div>
+											<div class="custom-card cover better">
+												<img src="./assets/memorial-way-pedestrian-path-square-400w.jpg" alt="pathway entrance with stone pillars and autumnal leaves on the trees lining the path" />
+												<div class="custom-card-body">
+													<h4>Custom card 3</h4>
+													<p>I'm a custom card and the intrinsic size for the image I'm holding is 400x400.</p>
+												</div>
+											</div>
+										</div>
+										<div>
+											<pre><code class="lang-css">img {
 	object-fit: cover;
 	width: 100%;
 	border-radius: 1em 1em 0 0;
 	height: 50%;
 	object-position: center bottom;
 }</code></pre>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
+						</section><!-- #object-fit -->
 					</div>
 				</div>
-			</section>
-
-			<section id="aspect-ratio">
-				<h2>Aspect ratio</h2>
-				<p>Aspect ratio can be an incredibly handy tool to resolve traditionally frustrating layout situations.</p>
-				<p>As you can see with the image examples below, <code>aspect-ratio</code> used alone may not be your best bet, but combined with <code>object-fit</code> and <code>object-position</code>, can guarantee you will always have the same layout.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example pink responsive">
-							<h3>Normal responsive image</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-accent-pink.svg" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="aspect-ratio">
+							<h2>Aspect ratio</h2>
+							<p>Aspect ratio can be an incredibly handy tool to resolve traditionally frustrating layout situations.</p>
+							<p>As you can see with the image examples below, <code>aspect-ratio</code> used alone may not be your best bet, but combined with <code>object-fit</code> and <code>object-position</code>, can guarantee you will always have the same layout.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example pink responsive">
+										<h3>Normal responsive image</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 }</code></pre>
-						</div>
-
-						<div class="col example pink ar-1">
-							<h3>16:9 aspect ratio</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+									</div>
+		
+									<div class="col example pink ar-1">
+										<h3>16:9 aspect ratio</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16 / 9;
 }</code></pre>
-						</div>
-
-						<div class="col example pink ar-2">
-							<h3>1:1 aspect ratio</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+									</div>
+		
+									<div class="col example pink ar-2">
+										<h3>1:1 aspect ratio</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 1 / 1;
 }</code></pre>
-						</div>
-					</div>
-
-					<p>Here are the same examples with <code>object-fit</code> and <code>object-position</code> also applied:</p>
-					<div class="row gap">
-						<div class="col example pink responsive">
-							<h3>Normal responsive image</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+									</div>
+								</div>
+		
+								<p>Here are the same examples with <code>object-fit</code> and <code>object-position</code> also applied:</p>
+								<div class="row gap">
+									<div class="col example pink responsive">
+										<h3>Normal responsive image</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 }</code></pre>
-						</div>
-
-						<div class="col example pink ar-3">
-							<h3>16:9 aspect ratio</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+									</div>
+		
+									<div class="col example pink ar-3">
+										<h3>16:9 aspect ratio</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
 	object-position: center;
 	aspect-ratio: 16 / 9;
 }</code></pre>
-						</div>
-
-						<div class="col example pink ar-4">
-							<h3>1:1 aspect ratio</h3>
-							<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-
-							<pre><code class="language-css">img {
+									</div>
+		
+									<div class="col example pink ar-4">
+										<h3>1:1 aspect ratio</h3>
+										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+		
+										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
 	object-position: center;
 	aspect-ratio: 1 / 1;
 }</code></pre>
-						</div>
-					</div>
-
-					<p>Getting into video, iframes in particular, is where things have traditionally been annoying and frustrating to wrangle. With aspect-ratio, you can ensure your video is always the same aspect ratio regardless if the window or screen size.</p>
-
-					<div class="row gap">
-						<div class="col example pink">
-							<h3>Normal YouTube embed - fixed width & height</h3>
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-							<pre><code class="language-html">&lt;iframe width="560" height="315"
+									</div>
+								</div>
+		
+								<p>Getting into video, iframes in particular, is where things have traditionally been annoying and frustrating to wrangle. With aspect-ratio, you can ensure your video is always the same aspect ratio regardless if the window or screen size.</p>
+		
+								<div class="row gap">
+									<div class="col example pink">
+										<h3>Normal YouTube embed - fixed width & height</h3>
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		
+										<pre><code class="language-html">&lt;iframe width="560" height="315"
 src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
 title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
-						</div>
-						<div class="col example pink ar-2">
-							<h3>YouTube embed with fixed width and aspect ratio 1/1</h3>
-							<iframe width="500" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-							<pre><code class="language-html">&lt;iframe width="500"
+									</div>
+									<div class="col example pink ar-2">
+										<h3>YouTube embed with fixed width and aspect ratio 1/1</h3>
+										<iframe width="500" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		
+										<pre><code class="language-html">&lt;iframe width="500"
 src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
 title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 
 <pre><code class="language-css">iframe {
 	aspect-ratio: 1 / 1;
 }</code></pre>
-
-						</div>
-						<div class="col example pink ar-1">
-							<h3>YouTube embed with aspect ratio 16/9</h3>
-							<iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-							<pre><code class="language-html">&lt;iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
+		
+									</div>
+									<div class="col example pink ar-1">
+										<h3>YouTube embed with aspect ratio 16/9</h3>
+										<iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+										<pre><code class="language-html">&lt;iframe src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
 title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 
 <pre><code class="language-css">iframe {
@@ -327,29 +374,35 @@ title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 	height: auto;
 	aspect-ratio: 16 / 9;
 }</code></pre>
-						</div>
+									</div>
+								</div>
+							</div>
+						</section><!-- #aspect-ratio -->
 					</div>
 				</div>
-			</section>
-
-			<section id="margin-inline">
-				<h2>Margin inline</h2>
-				<p><code>margin-inline</code> is a shorthand for setting the inline margin (aka, the left and right margin for horizontal writing modes). To demonstrate the benefits, I've thrown in a few more <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">logical properties</a> in these examples. Logical properties were new to me!</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example sm-6 teal">
-							<h3>The long form way</h3>
-							<div class="card long-form mb-3">
-								<div class="card-body">
-									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
-								</div>
-							</div>
-							<div class="card long-form rtl mb-3">
-								<div class="card-body">
-									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. It has a solid right border.</p>
-								</div>
-							</div>
-							<p>For the first example above I added some styles to the <code>.card</code> wrapper:</p>
+				<img class="mb-1 p-0 svg-wavy" src="assets/wavy-divider-accent-teal.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="margin-inline">
+							<h2>Margin inline</h2>
+							<p><code>margin-inline</code> is a shorthand for setting the inline margin (aka, the left and right margin for horizontal writing modes). To demonstrate the benefits, I've thrown in a few more <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">logical properties</a> in these examples. Logical properties were new to me!</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example sm-6 teal">
+										<h3>The long form way</h3>
+										<div class="card long-form mb-3">
+											<div class="card-body">
+												<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
+											</div>
+										</div>
+										<div class="card long-form rtl mb-3">
+											<div class="card-body">
+												<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. It has a solid right border.</p>
+											</div>
+										</div>
+										<p>For the first example above I added some styles to the <code>.card</code> wrapper:</p>
 <pre><code class="lang-css">.card {
 	padding-left: 1.5em;
 	padding-right: 1em;
@@ -359,7 +412,7 @@ img {
 	margin-right: 1em;
 }
 </code></pre>
-							<p>Then, for second example (assuming <code>direction: rtl;</code> is set), some styles needed to be reset and others added:</p>
+										<p>Then, for second example (assuming <code>direction: rtl;</code> is set), some styles needed to be reset and others added:</p>
 <pre><code class="lang-css">.card {
 	padding-right: 1.5em;
 	padding-left: 1em;
@@ -371,20 +424,20 @@ img {
 	margin-left: 1em;
 }
 </code></pre>
-						</div>
-						<div class="col example sm-6 teal">
-							<h3>Now with logical properties</h3>
-							<div class="card short-form mb-3">
-								<div class="card-body">
-									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
-								</div>
-							</div>
-							<div class="card short-form rtl mb-3">
-								<div class="card-body">
-									<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. This has a solid right border.</p>
-								</div>
-							</div>
-							<p>For both the examples directy above, this is all that was needed:</p>
+									</div>
+									<div class="col example sm-6 teal">
+										<h3>Now with logical properties</h3>
+										<div class="card short-form mb-3">
+											<div class="card-body">
+												<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's left aligned. It has an image avatar, some text and a solid left border.</p>
+											</div>
+										</div>
+										<div class="card short-form rtl mb-3">
+											<div class="card-body">
+												<img src="https://placehold.co/125/png" alt="placeholder image" /><p>This is a customized card that's right aligned. The card has <code>direction: rtl;</code> set for its contents. This has a solid right border.</p>
+											</div>
+										</div>
+										<p>For both the examples directy above, this is all that was needed:</p>
 <pre><code class="lang-css">.card {
 	padding-inline-start: 1.5em;
 	padding-inline-end: 1em;
@@ -394,113 +447,131 @@ img {
 	margin-inline-end: 1em;
 }
 </code></pre>
-						</div>
+									</div>
+								</div>
+							</div>
+						</section><!-- #margin-inline -->
 					</div>
 				</div>
-			</section>
-
-			<section id="text-underline-offset">
-				<h2>Text underline offset</h2>
-				<p>We now have <code>text-underline-offset</code> which controls the distance of the underline from the text (which is coming from <code>text-decoration: underline</code>).</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example green">
-							<h3>Some "older" ways</h3>
-							<ul>
-								<li><a href="#">See video of Dubs</a> - do nothing and take the default, which is: <pre><code class="language-css">{
+				<img class="mb-1 p-0 svg-wavy" src="assets/wavy-divider-accent-green.svg" alt="" />
+			<div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="text-underline-offset">
+							<h2>Text underline offset</h2>
+							<p>We now have <code>text-underline-offset</code> which controls the distance of the underline from the text (which is coming from <code>text-decoration: underline</code>).</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example green">
+										<h3>Some "older" ways</h3>
+										<ul>
+											<li><a href="#">See video of Dubs</a> - do nothing and take the default, which is: <pre><code class="language-css">{
 	text-decoration: underline;
 }
 </code></pre>
-								</li>
-								<li><a href="#" class="tl-td-none tl-link-border-btm">See video of Dubs</a> - remove the default and use border-bottom <pre><code class="language-css">{
+											</li>
+											<li><a href="#" class="tl-td-none tl-link-border-btm">See video of Dubs</a> - remove the default and use border-bottom <pre><code class="language-css">{
 	text-decoration: none;
 	border-bottom: 1px solid
 }</code></pre>
-								</li>
-								<li><a href="#" class="tl-td-none tl-box-shadow">See video of Dubs</a> - remove the default and use a box-shadow and put padding around the link:
+											</li>
+											<li><a href="#" class="tl-td-none tl-box-shadow">See video of Dubs</a> - remove the default and use a box-shadow and put padding around the link:
 <pre>
 <code class="lang-css">{
 	text-decoration: none;
 	box-shadow: 0 3px;
 	padding: 4px;
 }</code></pre>
-								</li>
-							</ul>
-						</div>
-						<div class="col example green">
-							<h3>What the cool kids are using now</h3>
-							<ul>
-								<li><a href="#" class="tl-tu-offset">See video of Dubs</a> - decide how far from the text you want the underline like: <pre><code class="language-css">{
+											</li>
+										</ul>
+									</div>
+									<div class="col example green">
+										<h3>What the cool kids are using now</h3>
+										<ul>
+											<li><a href="#" class="tl-tu-offset">See video of Dubs</a> - decide how far from the text you want the underline like: <pre><code class="language-css">{
 	text-underline-offset: .25em;
 }</code></pre>
-								</li>
-								<li><a href="#" class="tl-tu-offset tl-td-thick-2">See video of Dubs</a> - pair it with text-decoration-thickness, so: <pre><code class="language-css">{
+											</li>
+											<li><a href="#" class="tl-tu-offset tl-td-thick-2">See video of Dubs</a> - pair it with text-decoration-thickness, so: <pre><code class="language-css">{
 	text-underline-offset: .25em;
 	text-decoration-thickness: 0.2em;
 }</code></pre></li>
-								<li><a href="#" class="tl-tu-offset-2 tl-td-thick-3">See video of Dubs</a> - go far with the offset <strong>and</strong> thicken up the border (probably not the best idea?) with <pre><code class="language-css">{
+											<li><a href="#" class="tl-tu-offset-2 tl-td-thick-3">See video of Dubs</a> - go far with the offset <strong>and</strong> thicken up the border (probably not the best idea?) with <pre><code class="language-css">{
 	text-underline-offset: .5em;
 	text-decoration-thickness: 0.3em;
 }</code></pre>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="outline-offset">
-				<h2>Outline offset</h2>
-				<p>
-					Adding <code>outline-offset</code> to an element pushes the outline away by the value you give the property. Using a negative value pulls the outline into the element.
-				</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example purple has-white-background-color">
-							<h3 class="mb-4">The general idea</h3>
-							<p>
-								<span class="element-to-offset">This has a positive offset</span>
-								<span class="element-to-offset o-offset-n">This has a negative offset</span>
-							</p>
-						</div>
-					</div>
-					<div class="row gap">
-						<div class="col example purple has-white-background-color">
-							<h3>Links in a paragraph</h3>
-							<p>This first link has <a href="#">no outline-offset on focus</a>! Here's some more text so we can see it in action among <a href="#" class="o-offset-p black">other links that have</a> outline-offset on focus. And were we to keep tabbing through a paragraph - <a href="#" class="o-offset-p black">here's a link to another place</a>.
-							</p>
-						</div>
-						<div class="col example purple has-white-background-color">
-							<h3>Buttons</h3>
-							<p>
-								Here are some things we can do with buttons and adding outline-offset on focus.
-							</p>
-							<p>
-								<button type="button" class="p-2 o-offset-p">Plain button - outside</button></p>
-								<button type="button" class="p-2 o-offset-n">Plain button - inside</button></p>
-								<button type="button" class="btn btn-info o-offset-p">Bootstrap btn - outside</button></p>
-								<button type="button" class="btn btn-info o-offset-n">Bootstrap btn - inside</button></p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="scroll-margin">
-				<h2>Scroll margin top/bottom</h2>
-				<p>Scroll margin (<code>scroll-margin</code>) sets the scroll margins of an element inside its container. Each child element of a container has a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Snap_positions">snap position</a>. <code>scroll-margin</code> lets us tinker that position as if the child element has a margin.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example teal">
-							<h3>Child elements stacked vertically</h3>
-							<div class="scroll-container mb-3">
-								<div class="box has-husky-light-gold-background-color">1</div>
-								<div class="box has-spirit-candle-green-background-color">2</div>
-								<div class="box has-husky-purple-background-color has-white-color">3</div>
-								<div class="box has-spirit-metallic-gold-background-color has-white-color">4</div>
-								<div class="box has-husky-light-gold-background-color">5</div>
-								<div class="box has-spirit-pink-background-color has-white-color">6</div>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<p>What's going on here, in a nutshell:</p>
+						</section><!-- #text-underline-offset -->
+					</div>
+				</div>
+				<img class="mb-1 p-0 svg-wavy" src="assets/wavy-divider-accent-lavender.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="outline-offset">
+							<h2>Outline offset</h2>
+							<p>
+								Adding <code>outline-offset</code> to an element pushes the outline away by the value you give the property. Using a negative value pulls the outline into the element.
+							</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example purple has-white-background-color">
+										<h3 class="mb-4">The general idea</h3>
+										<p>
+											<span class="element-to-offset">This has a positive offset</span>
+											<span class="element-to-offset o-offset-n">This has a negative offset</span>
+										</p>
+									</div>
+								</div>
+								<div class="row gap">
+									<div class="col example purple has-white-background-color">
+										<h3>Links in a paragraph</h3>
+										<p>This first link has <a href="#">no outline-offset on focus</a>! Here's some more text so we can see it in action among <a href="#" class="o-offset-p black">other links that have</a> outline-offset on focus. And were we to keep tabbing through a paragraph - <a href="#" class="o-offset-p black">here's a link to another place</a>.
+										</p>
+									</div>
+									<div class="col example purple has-white-background-color">
+										<h3>Buttons</h3>
+										<p>
+											Here are some things we can do with buttons and adding outline-offset on focus.
+										</p>
+										<p>
+											<button type="button" class="p-2 o-offset-p">Plain button - outside</button></p>
+											<button type="button" class="p-2 o-offset-n">Plain button - inside</button></p>
+											<button type="button" class="btn btn-info o-offset-p">Bootstrap btn - outside</button></p>
+											<button type="button" class="btn btn-info o-offset-n">Bootstrap btn - inside</button></p>
+									</div>
+								</div>
+							</div>
+						</section><!-- #outlin-offset -->
+					</div>
+				</div>
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-accent-teal.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="scroll-margin">
+							<h2>Scroll margin top/bottom</h2>
+							<p>Scroll margin (<code>scroll-margin</code>) sets the scroll margins of an element inside its container. Each child element of a container has a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Snap_positions">snap position</a>. <code>scroll-margin</code> lets us tinker that position as if the child element has a margin.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example teal">
+										<h3>Child elements stacked vertically</h3>
+										<div class="scroll-container mb-3">
+											<div class="box has-husky-light-gold-background-color">1</div>
+											<div class="box has-spirit-candle-green-background-color">2</div>
+											<div class="box has-husky-purple-background-color has-white-color">3</div>
+											<div class="box has-spirit-metallic-gold-background-color has-white-color">4</div>
+											<div class="box has-husky-light-gold-background-color">5</div>
+											<div class="box has-spirit-pink-background-color has-white-color">6</div>
+										</div>
+										<p>What's going on here, in a nutshell:</p>
 <pre><code class="lang-css">.scroll-container {
 	.box-1 {scroll-margin: 0;}
 	.box-2 {scroll-margin: 1em;}
@@ -511,98 +582,114 @@ img {
 }
 </code></pre>
 
-						</div>
-						<div class="col example teal">
-							<h3>On this page</h3>
-							<p>These elements don't have a <code>scroll-margin</code>.</p>
-							<ul>
-								<li><a href="#outline-offset">Scroll to Outline offset</a></li>
-								<li><a href="#text-underline-offset">Scroll to Text underline offset</a></li>
-							</ul>
-							<p>These two elements <strong>do</strong> have a <code>scroll-margin</code> of <code>8em</code>.</p>
-							<ul>
-								<li><a href="#text-wrap-balance">Scroll to Text wrap balance</a></li>
-								<li><a href="#object-fit">Scroll to Object fit</a></li>
-							</ul>
-							<div class="form-check form-switch">
-								<input onClick="toggleMe(this);" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked value="false">
-								<label class="form-check-label" for="flexSwitchCheckChecked">Toggle sticky <code>header</code> and try each of these.</label>
-							</div>
-							<p>Here's where <code>scroll-margin</code> is in play:</p>
+									</div>
+									<div class="col example teal">
+										<h3>On this page</h3>
+										<p>These elements don't have a <code>scroll-margin</code>.</p>
+										<ul>
+											<li><a href="#outline-offset">Scroll to Outline offset</a></li>
+											<li><a href="#text-underline-offset">Scroll to Text underline offset</a></li>
+										</ul>
+										<p>These two elements <strong>do</strong> have a <code>scroll-margin</code> of <code>8em</code>.</p>
+										<ul>
+											<li><a href="#text-wrap-balance">Scroll to Text wrap balance</a></li>
+											<li><a href="#object-fit">Scroll to Object fit</a></li>
+										</ul>
+										<div class="form-check form-switch">
+											<input onClick="toggleMe(this);" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked value="false">
+											<label class="form-check-label" for="flexSwitchCheckChecked">Toggle sticky <code>header</code> and try each of these.</label>
+										</div>
+										<p>Here's where <code>scroll-margin</code> is in play:</p>
 <pre><code class="lang-css">#object-fit,
 #text-wrap-balance {
 	scroll-margin-top: 5em;
 }
 </code></pre>
-						</div>
+									</div>
+								</div>
+							</div>
+						</section><!-- #scroll-margin -->
 					</div>
 				</div>
-			</section>
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-sp-gold.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="accent-color">
+							<h2>Accent color</h2>
+							<p>The accent-color property currently works on input elements for checkbox, radio, and range, and the progress element.</p>
+							<p>Note the background color on the progress and range elements is set automatically based on the color specified.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example spgold">
+										<h3>Default</h3>
+										<input type="checkbox">
+										<input type="radio">
+										<input type="range">
+										<progress max="100" value="70">
+									</div>
+									<div class="col example spgold accent1">
+										<h3>Accent color specified</h3>
+										<input type="checkbox">
+										<input type="radio">
+										<input type="range">
+										<progress max="100" value="70">
+									</div>
+									<div class="col example spgold accent2">
+										<h3>Accent color specified</h3>
+										<input type="checkbox">
+										<input type="radio">
+										<input type="range">
+										<progress max="100" value="70">
+									</div>
+								</div>
 
-
-
-			<section id="accent-color">
-				<h2>Accent color</h2>
-				<p>The accent-color property currently works on input elements for checkbox, radio, and range, and the progress element.</p>
-				<p>Note the background color on the progress and range elements is set automatically based on the color specified.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example spgold">
-							<h3>Default</h3>
-							<input type="checkbox">
-							<input type="radio">
-							<input type="range">
-							<progress max="100" value="70">
-						</div>
-						<div class="col example spgold accent1">
-							<h3>Accent color specified</h3>
-							<input type="checkbox">
-							<input type="radio">
-							<input type="range">
-							<progress max="100" value="70">
-						</div>
-						<div class="col example spgold accent2">
-							<h3>Accent color specified</h3>
-							<input type="checkbox">
-							<input type="radio">
-							<input type="range">
-							<progress max="100" value="70">
-						</div>
-					</div>
-
-					<p>To enable accent color:</p>
-					<pre><code class="lang-css">.accent1 {
+								<p>To enable accent color:</p>
+								<pre><code class="lang-css">.accent1 {
 	accent-color: pink;
 }
 .accent2 {
 	accent-color: #4b2e83;
 }</code></pre>
-				</div>
-			</section>
-
-			<section id="fit-content-width">
-				<h2>Fit content width</h2>
-				<p>Instead of <code>display: inline-block;</code> to have an element's width match its content's size, you can use <code>width: fit-content</code> to achieve the same. This leaves the <code>display</code> property open for other use. The computed box size adjusts to the dimensions created when using <code>fit-content</code>.</p>
-				<div class="container">
-					<div class="row gap">
-						<div class="col example green">
-							<div class="has-spirit-candle-green-background-color p-3 mb-3">
-								<p class="mb-0">The wrapper fills the available space.</p>
 							</div>
-							<div class="fit-content has-husky-light-gold-background-color p-3 mb-3">
-								<p class="mb-0">The wrapper fits the content because we're using <code>width: fit-content</code>.</p>
-							</div>
-						</div>
+						</section><!-- #accent-color -->
 					</div>
 				</div>
-			</section>
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-accent-green.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="fit-content-width">
+							<h2>Fit content width</h2>
+							<p>Instead of <code>display: inline-block;</code> to have an element's width match its content's size, you can use <code>width: fit-content</code> to achieve the same. This leaves the <code>display</code> property open for other use. The computed box size adjusts to the dimensions created when using <code>fit-content</code>.</p>
+							<div class="container">
+								<div class="row gap">
+									<div class="col example green">
+										<div class="has-spirit-candle-green-background-color p-3 mb-3">
+											<p class="mb-0">The wrapper fills the available space.</p>
+										</div>
+										<div class="fit-content has-husky-light-gold-background-color p-3 mb-3">
+											<p class="mb-0">The wrapper fits the content because we're using <code>width: fit-content</code>.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section><!-- #fit-content-width -->
+					</div>
+				</div>
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-accent-lavender.svg" alt="" />
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="container">
+						<section id="css-nesting">
+							<h2>CSS Nesting</h2>
+							<p>Basically, like nesting in Sass or LESS, but parsed by the browser instead of compiled a preprocessor. If you are familiar with Sass, this will be almost identical.</p>
 
-			<section id="css-nesting">
-				<h2>CSS Nesting</h2>
-				<p>Basically, like nesting in Sass or LESS, but parsed by the browser instead of compiled a preprocessor. If you are familiar with Sass, this will be almost identical.</p>
-
-				<p>Here's an example from this site's stylesheet:</p>
-				<pre><code class="lang-css">body {
+							<p>Here's an example from this site's stylesheet:</p>
+							<pre><code class="lang-css">body {
 	#accent-color {
 		.accent1 {
 			accent-color: pink;
@@ -614,8 +701,8 @@ img {
 	}
 }</code></pre>
 
-				<p>The browser essentially converts this to:</p>
-				<pre><code class="lang-css">body #accent-color .accent1 {
+							<p>The browser essentially converts this to:</p>
+							<pre><code class="lang-css">body #accent-color .accent1 {
 	accent-color: pink;
 }
 
@@ -623,84 +710,88 @@ body #accent-color .accent2 {
 	accent-color: var(--wp--preset--color--husky-purple);
 }</code></pre>
 
-				<p>Also check out what it looks like in the dev tools with the nesting.</p>
-			</section>
-
-			<section id="css-has">
-				<h2><code>:has()</code></h2>
-				<p>From MDN: "The functional :has() CSS pseudo-class represents an element if any of the relative selectors that are passed as an argument match at least one element when anchored against this element. This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument."</p>
-
-				<h3>A parent selector</h3>
-
-				<p>In this example, we are adding a top margin <em>only</em> if the card has an image. This creates a more uniform style for when the card doesn't have an image. We're using an exaggerated margin on the image cards to easily see a difference.</p>
-
-				<div class="container">
-					<div class="row gap">
-						<div class="col example teal">
-							<div class="card">
-								<img src="assets/dubs.jpg" class="card-img-top" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
-								</div>
-							  </div>
-						</div>
-						<div class="col example teal">
-							<div class="card">
-								<img src="assets/dubs.jpg" class="card-img-top" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
-								</div>
-							  </div>
-						</div>
-						<div class="col example teal">
-							<div class="card">
-								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
-								</div>
-							  </div>
-						</div>
+							<p>Also check out what it looks like in the dev tools with the nesting.</p>
+						</section><!-- #css-nesting -->
 					</div>
 				</div>
+				<img class="m-0 p-0 svg-wavy" src="assets/wavy-divider-accent-teal.svg" alt="" />
+			</div>
+			<div class="container">
+				<section id="css-has">
+					<h2><code>:has()</code></h2>
+					<p>From MDN: "The functional :has() CSS pseudo-class represents an element if any of the relative selectors that are passed as an argument match at least one element when anchored against this element. This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument."</p>
 
-				<pre><code class="lang-css">.card:has(img) {
+					<h3>A parent selector</h3>
+
+					<p>In this example, we are adding a top margin <em>only</em> if the card has an image. This creates a more uniform style for when the card doesn't have an image. We're using an exaggerated margin on the image cards to easily see a difference.</p>
+
+					<div class="container">
+						<div class="row gap">
+							<div class="col example teal">
+								<div class="card">
+									<img src="assets/dubs.jpg" class="card-img-top" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+									<div class="card-body">
+									  <h5 class="card-title">Card title</h5>
+									  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
+									</div>
+								  </div>
+							</div>
+							<div class="col example teal">
+								<div class="card">
+									<img src="assets/dubs.jpg" class="card-img-top" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
+									<div class="card-body">
+									  <h5 class="card-title">Card title</h5>
+									  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
+									</div>
+								  </div>
+							</div>
+							<div class="col example teal">
+								<div class="card">
+									<div class="card-body">
+									  <h5 class="card-title">Card title</h5>
+									  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									  <a href="#" class="btn has-husky-purple-background-color has-white-color">Go somewhere</a>
+									</div>
+								  </div>
+							</div>
+						</div>
+					</div>
+
+					<pre><code class="lang-css">.card:has(img) {
 	h2, h3, h4, h5, h6 {
 		margin-top: 2rem;
 	}
 }</code></pre>
 
-				<h3 class="mt-5">Change parent and child based on parent contents</h3>
+					<h3 class="mt-5">Change parent and child based on parent contents</h3>
 
-				<p>In this example we'll apply different styling to an image based on whether it has a caption.</p>
+					<p>In this example we'll apply different styling to an image based on whether it has a caption.</p>
 
-				<div class="container">
-					<div class="row gap">
-						<div class="col text-image">
-							<h4>Example without caption</h4>
-							<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
-							<img src="assets/cb11.jpg" alt="cherry blossoms at UW">
-							<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
-						</div>
+					<div class="container">
+						<div class="row gap">
+							<div class="col text-image">
+								<h4>Example without caption</h4>
+								<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
+								<img src="assets/cb11.jpg" alt="cherry blossoms at UW">
+								<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
+							</div>
 
-						<div class="col text-image">
-							<h4>Example with caption</h4>
-							<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
-							<figure>
-								<img src="assets/cb12.jpg" alt="cherry blossoms at UW">
-								<figcaption>Cherry blossoms on the Quad at UW</figcaption>
-							</figure>
+							<div class="col text-image">
+								<h4>Example with caption</h4>
+								<p>Cupcake ipsum dolor sit amet cotton candy powder liquorice shortbread. Croissant macaroon dessert danish caramels donut caramels. Candy canes apple pie gummi bears tootsie roll cookie.</p>
+								<figure>
+									<img src="assets/cb12.jpg" alt="cherry blossoms at UW">
+									<figcaption>Cherry blossoms on the Quad at UW</figcaption>
+								</figure>
 
-							<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
+								<p>Liquorice bear claw shortbread toffee muffin. Brownie pudding pudding candy cake. Bonbon powder macaroon soufflé lollipop. Bonbon topping chocolate bar chocolate bar tart oat cake marshmallow.</p>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<pre class="mt-5"><code class="lang-css">/* All images */
+					<pre class="mt-5"><code class="lang-css">/* All images */
 .text-image {
 	border: 1px solid var(--wp--preset--color--spirit-pink);
 	padding: 1rem;
@@ -733,96 +824,97 @@ body #accent-color .accent2 {
 	}
 }</code></pre>
 
-				<h3 class="mt-5">Show an error message outside your form if something happens inside your form, using only CSS</h3>
+					<h3 class="mt-5">Show an error message outside your form if something happens inside your form, using only CSS</h3>
 
-				<p>This example shows how you can toggle content based on form actions without using JavaScript.</p>
+					<p>This example shows how you can toggle content based on form actions without using JavaScript.</p>
 
-				<p>Check the "Agree to terms and conditions" box below to see the example error message.</p>
+					<p>Check the "Agree to terms and conditions" box below to see the example error message.</p>
 
-				<div class="form-example">
-				<div class="error alert alert-danger">
-					<p>Hello! Only show me if the box is checked!</p>
-				</div>
-				<form class="row mt-5 mb-5 g-3 needs-validation" novalidate>
-					<div class="col-md-4">
-						<label for="validationCustom01" class="form-label">First name</label>
-						<input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-						<div class="valid-feedback">
-							Looks good!
-						</div>
-						</div>
+					<div class="form-example">
+					<div class="error alert alert-danger">
+						<p>Hello! Only show me if the box is checked!</p>
+					</div>
+					<form class="row mt-5 mb-5 g-3 needs-validation" novalidate>
 						<div class="col-md-4">
-						<label for="validationCustom02" class="form-label">Last name</label>
-						<input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-						<div class="valid-feedback">
-							Looks good!
-						</div>
-						</div>
-						<div class="col-md-4">
-						<label for="validationCustomUsername" class="form-label">Username</label>
-						<div class="input-group has-validation">
-							<span class="input-group-text" id="inputGroupPrepend">@</span>
-							<input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-							<div class="invalid-feedback">
-							Please choose a username.
+							<label for="validationCustom01" class="form-label">First name</label>
+							<input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+							<div class="valid-feedback">
+								Looks good!
 							</div>
-						</div>
-						</div>
-						<div class="col-md-6">
-						<label for="validationCustom03" class="form-label">City</label>
-						<input type="text" class="form-control" id="validationCustom03" required>
-						<div class="invalid-feedback">
-							Please provide a valid city.
-						</div>
-						</div>
-						<div class="col-md-3">
-						<label for="validationCustom04" class="form-label">State</label>
-						<select class="form-select" id="validationCustom04" required>
-							<option selected disabled value="">Choose...</option>
-							<option>...</option>
-						</select>
-						<div class="invalid-feedback">
-							Please select a valid state.
-						</div>
-						</div>
-						<div class="col-md-3">
-						<label for="validationCustom05" class="form-label">Zip</label>
-						<input type="text" class="form-control" id="validationCustom05" required>
-						<div class="invalid-feedback">
-							Please provide a valid zip.
-						</div>
-						</div>
-						<div class="col-12">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-							<label class="form-check-label" for="invalidCheck">
-							Agree to terms and conditions
-							</label>
-							<div class="invalid-feedback">
-							You must agree before submitting.
 							</div>
-						</div>
-						</div>
-						<div class="col-12">
-						<button class="btn btn-primary" type="submit">Submit form</button>
-						</div>
-					</form>
-				</div>
+							<div class="col-md-4">
+							<label for="validationCustom02" class="form-label">Last name</label>
+							<input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+							<div class="valid-feedback">
+								Looks good!
+							</div>
+							</div>
+							<div class="col-md-4">
+							<label for="validationCustomUsername" class="form-label">Username</label>
+							<div class="input-group has-validation">
+								<span class="input-group-text" id="inputGroupPrepend">@</span>
+								<input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+								<div class="invalid-feedback">
+								Please choose a username.
+								</div>
+							</div>
+							</div>
+							<div class="col-md-6">
+							<label for="validationCustom03" class="form-label">City</label>
+							<input type="text" class="form-control" id="validationCustom03" required>
+							<div class="invalid-feedback">
+								Please provide a valid city.
+							</div>
+							</div>
+							<div class="col-md-3">
+							<label for="validationCustom04" class="form-label">State</label>
+							<select class="form-select" id="validationCustom04" required>
+								<option selected disabled value="">Choose...</option>
+								<option>...</option>
+							</select>
+							<div class="invalid-feedback">
+								Please select a valid state.
+							</div>
+							</div>
+							<div class="col-md-3">
+							<label for="validationCustom05" class="form-label">Zip</label>
+							<input type="text" class="form-control" id="validationCustom05" required>
+							<div class="invalid-feedback">
+								Please provide a valid zip.
+							</div>
+							</div>
+							<div class="col-12">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+								<label class="form-check-label" for="invalidCheck">
+								Agree to terms and conditions
+								</label>
+								<div class="invalid-feedback">
+								You must agree before submitting.
+								</div>
+							</div>
+							</div>
+							<div class="col-12">
+							<button class="btn btn-primary" type="submit">Submit form</button>
+							</div>
+						</form>
+					</div>
 
-				<p>First, let's see our markup:</p>
+					<p>First, let's see our markup:</p>
 
-				<pre><code class="lang-html">&lt;div class="form-example"&gt;
-	&lt;div class="error alert alert-danger"&gt;
-		&lt;p&gt;Hello! Only show me if the box is checked!&lt;/p&gt;
+					<pre><code class="lang-html">&lt;div class="form-example"&gt;
+		&lt;div class="error alert alert-danger"&gt;
+			&lt;p&gt;Hello! Only show me if the box is checked!&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;form class="row mt-5 mb-5 g-3 needs-validation" novalidate&gt;
+			...
+		&lt;/form&gt;
 	&lt;/div&gt;
-	&lt;form class="row mt-5 mb-5 g-3 needs-validation" novalidate&gt;
-		...
-	&lt;/form&gt;
 &lt;/div&gt;</code></pre>
 
-				<p class="mt-5">And here is the CSS to make this work:</p>
+					<p class="mt-5">And here is the CSS to make this work:</p>
 
-				<pre><code class="lang-css">.form-example:has(input:checked) {
+					<pre><code class="lang-css">.form-example:has(input:checked) {
 	.error {
 		display: block;
 	}
@@ -833,11 +925,14 @@ body #accent-color .accent2 {
 	}
 }</code></pre>
 
-				<div class="mt-5 tip"><h4>💡 Tip: additional functional pseudo-classes</h4>
-					<p><code>:is()</code>, <code>:where()</code>, and <code>:not()</code> are the other functional pseudo-classes. They can be used with <code>:has()</code> and each other. Have you used these yet?</p>
-				</div>
-
-			</section>
+					<div class="mt-5 tip"><h4>💡 Tip: additional functional pseudo-classes</h4>
+						<p><code>:is()</code>, <code>:where()</code>, and <code>:not()</code> are the other functional pseudo-classes. They can be used with <code>:has()</code> and each other. Have you used these yet?</p>
+					</div>
+				</section><!-- #css-has -->
+			</div>
+			<button onClick="scrollToTop()" id="btn-back-to-top" class="btn btn-floating has-husky-purple-background-color has-white-color" href="#top">
+				<i class="bi bi-caret-up-fill"></i> Back to Top
+			</button>
 		</main>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="prism/prism.js"></script>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+
 body {
 	/* colors pulled from the WP theme for the block editor */
 	--wp--preset--color--primary: #4b2e83;
@@ -47,6 +49,15 @@ body {
 	.has-true-black-background-color { background-color: var(--wp--preset--color--true-black) !important; }
 	.has-gray-background-color { background-color: var(--wp--preset--color--gray) !important; }
 
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Slab", serif !important;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
 	header {
 		.logo {
 			margin-bottom: -12px;
@@ -99,10 +110,13 @@ body {
 			text-decoration-thickness: 2px;
 			text-underline-offset: 10px;
 		}
+
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+		--webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 	}
 
 	main {
-		margin-top: 30px;
+		padding-top: 30px;
 		margin-bottom: 80px;
 	}
 
@@ -115,7 +129,7 @@ body {
 	}
 
 	section {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 
 	.example {
@@ -721,5 +735,112 @@ body {
 		.scroll-container > .box:nth-child(5) {
 			scroll-margin: 4em;
 		}
+	}
+
+	/* intro and table of contents */
+	.card {
+		&.toc {
+			border-radius: 1em;
+			border: none;
+			border-bottom: 30px solid var(--wp--preset--color--spirit-candle-green);
+			height: auto;
+			box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+			background-color: var(--wp--preset--color--white);
+			padding: 2em;
+
+			img {
+				width: 80%;
+			}
+			ol {
+				list-style-type: none;
+				counter-reset: tour-stops-counter;	
+				/* display: flex; */
+				/* flex-wrap: wrap; */
+				padding-left: 3em;
+				margin: 0;
+			}
+			ol li {
+				counter-increment: tour-stops-counter;
+				display: block;
+				position: relative;
+				margin: 0 0 1em 0;
+			}
+			ol li::before {
+				padding: .125em .75em .25em .75em;
+				position: absolute;
+				border-radius: 100%;
+				--size: 1.75em;
+				left: calc(-1 * var(--size) - 1em);
+				width: --size;
+				height: --size;
+				line-height: --size;
+				top: 0;
+				font-family: "Roboto Slab", serif;
+				font-weight: 800;
+				font-size: 1em;
+				content: counter(tour-stops-counter);
+				background: var(--wp--preset--color--husky-purple);
+				color: var(--wp--preset--color--white);
+			}
+		}
+		i {
+			font-size: 5em;
+			text-align: center;
+			color: var(--wp--preset--color--husky-purple);
+		}
+	}
+
+	/* svgs for backgrounds */
+	.svg-wavy {
+		object-fit: cover;
+		object-position: center center;
+		height: 175px;
+	}
+
+	.svg-intro {
+		position:relative;
+	}
+	.svg-intro::before{
+		content:'';
+		position: absolute;
+		z-index: -3;
+		pointer-events: none;
+		background-repeat: no-repeat;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: -1.25em;
+		background-size: 100%;
+		background-position: 50% 0;
+		background-image: url('assets/bus-scene.svg');
+	}
+
+	@media (max-width: 1000px) {
+		.svg-wavy {
+			height: 150px;
+		}
+	}
+	@media (max-width: 800px) {
+		.svg-wavy {
+			height: 100px;
+			left: 25%;
+		}
+		.svg-intro::before{
+			background-image: url('assets/bus-scene-mobile.svg');
+		}
+	}
+
+	#btn-back-to-top {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		display: none;
+		cursor: pointer;
+		font-weight: bold;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	}
+	#btn-back-to-top:focus {
+		outline-offset: 2px;
+		outline: 3px solid var(--wp--preset--color--spirit-pink);
 	}
 }
