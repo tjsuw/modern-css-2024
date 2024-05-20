@@ -1,3 +1,4 @@
+// For the toggle to make sticky header.
 window.onload = setToggleFalse();
 
 function setToggleFalse() {
@@ -15,4 +16,28 @@ function toggleMe(e) {
 	} else {
 		header.classList.remove('sticky-top');
 	}
+}
+
+// For the scroll back to top button.
+let scrollBtn = document.querySelector('#btn-back-to-top');
+
+// Listen for user scroll.
+window.onscroll = function () {
+	scrollFunction();
+};
+
+function scrollFunction() {
+	if (
+		document.body.scrollTop > 150 ||
+		document.documentElement.scrollTop > 150
+	) {
+		scrollBtn.style.display = 'block';
+	} else {
+		scrollBtn.style.display = 'none';
+	}
+}
+
+function scrollToTop() {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
 }

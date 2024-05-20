@@ -52,7 +52,6 @@ body {
 	font-family: "Open Sans", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	/*font-variation-settings: "wdth" 100;*/
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Roboto Slab", serif !important;
@@ -127,7 +126,7 @@ body {
 	}
 
 	section {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 
 	.example {
@@ -745,6 +744,38 @@ body {
 			box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 			background-color: var(--wp--preset--color--white);
 			padding: 2em;
+
+			ol {
+				list-style-type: none;
+				counter-reset: tour-stops-counter;	
+				/* display: flex; */
+				/* flex-wrap: wrap; */
+				padding-left: 3em;
+				margin: 0;
+			}
+			ol li {
+				counter-increment: tour-stops-counter;
+				display: block;
+				position: relative;
+				margin: 0 0 1em 0;
+			}
+			ol li::before {
+				padding: .25em .75em;
+				position: absolute;
+				border-radius: 100%;
+				--size: 1.75em;
+				left: calc(-1 * var(--size) - 1em);
+				width: --size;
+				height: --size;
+				line-height: --size;
+				top: 0;
+				font-family: "Roboto Slab", serif;
+				font-weight: 800;
+				font-size: 1em;
+				content: counter(tour-stops-counter);
+				background: var(--wp--preset--color--husky-purple);
+				color: var(--wp--preset--color--white);
+			}
 		}
 		i {
 			font-size: 5em;
@@ -753,46 +784,14 @@ body {
 		}
 	}
 
+	/* svgs for backgrounds */
 	.svg-wavy {
-		overflow: hidden;
-		position: relative;
+		object-fit: cover;
+		object-position: center center;
 		height: 175px;
 	}
-	.svg-wavy::before{
-		content:'';
-		position: absolute;
-		z-index: -3;
-		pointer-events: none;
-		background-repeat: no-repeat;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		top: 0;
-		background-size: cover;
-		background-position: 50% 50%;
-		background-image: url('assets/wavy-divider.svg');
-	}
-	.svg-wavy-accent-green::before {
-		background-image: url('assets/wavy-divider-accent-green.svg');
-	}
-	.svg-wavy-accent-lavender::before {
-		background-image: url('assets/wavy-divider-accent-lavender.svg');
-	}
-	.svg-wavy-accent-pink::before {
-		background-image: url('assets/wavy-divider-accent-pink.svg');
-	}
-	.svg-wavy-accent-teal::before {
-		background-image: url('assets/wavy-divider-accent-teal.svg');
-		background-position: 100% 50%;
-	}
-	.svg-wavy-sp-gold::before {
-		background-image: url('assets/wavy-divider-sp-gold.svg');
-		background-position: 100% 50%;
-	}
 
-	/* svgs for backgrounds */
 	.svg-intro {
-		/*overflow:hidden;*/
 		position:relative;
 	}
 	.svg-intro::before{
@@ -810,14 +809,28 @@ body {
 		background-image: url('assets/bus-scene.svg');
 	}
 
+	@media (max-width: 1000px) {
+		.svg-wavy {
+			height: 150px;
+		}
+	}
 	@media (max-width: 800px) {
+		.svg-wavy {
+			height: 100px;
+			left: 25%;
+		}
 		.svg-intro::before{
 			background-image: url('assets/bus-scene-mobile.svg');
 		}
-		.svg-wavy {
-			position: relative;
-			height: 100px;
-		}
 	}
 
+	#btn-back-to-top {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		display: none;
+		cursor: pointer;
+		font-weight: bold;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	}
 }
