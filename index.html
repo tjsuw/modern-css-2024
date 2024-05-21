@@ -44,7 +44,7 @@
 				<h1>A guided tour of cutting-edge CSS you can use now</h1>
 				<p>Welcome to a tour of cutting-edge CSS you can use now. These examples were inspired by this article: <a href="https:/web.dev/articles/5-css-snippets-every-front-end-developer-should-know-in-2024">5 CSS snippets every front-end developer should know in 2024</a>. Front-end web developer Teri Shelton, in collaboration with designer Andy Krikawa, put together these examples.</p>
 
-				<p>At the May 19, 2024 Front-End Tech Community of Practice, we'll demonstrate how they work and share some ideas on use cases. There's so much to cover: from subgrid to container queries and :has() to color-scheme... and more! It's going to be like a guided tour of favorite sites: stop, look at the view, snap a photo (screenshot!), ask a question, hop back on the bus.</p>
+				<p>At the May 21, 2024 Front-End Tech Community of Practice, we'll demonstrate how they work and share some ideas on use cases. There's so much to cover: from subgrid to container queries and :has() to color-scheme... and more! It's going to be like a guided tour of favorite sites: stop, look at the view, snap a photo (screenshot!), ask a question, hop back on the bus.</p>
 			</div>
 			<div class="row py-5 svg-intro">
 				<div class="col">
@@ -270,28 +270,28 @@ h1, h2, h3, h4, h5, h6 {
 									<div class="col example pink responsive">
 										<h3>Normal responsive image</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 }</code></pre>
 									</div>
-		
+
 									<div class="col example pink ar-1">
 										<h3>16:9 aspect ratio</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16 / 9;
 }</code></pre>
 									</div>
-		
+
 									<div class="col example pink ar-2">
 										<h3>1:1 aspect ratio</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
@@ -299,23 +299,23 @@ h1, h2, h3, h4, h5, h6 {
 }</code></pre>
 									</div>
 								</div>
-		
+
 								<p>Here are the same examples with <code>object-fit</code> and <code>object-position</code> also applied:</p>
 								<div class="row gap">
 									<div class="col example pink responsive">
 										<h3>Normal responsive image</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
 }</code></pre>
 									</div>
-		
+
 									<div class="col example pink ar-3">
 										<h3>16:9 aspect ratio</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
@@ -324,11 +324,11 @@ h1, h2, h3, h4, h5, h6 {
 	aspect-ratio: 16 / 9;
 }</code></pre>
 									</div>
-		
+
 									<div class="col example pink ar-4">
 										<h3>1:1 aspect ratio</h3>
 										<img src="assets/dubs.jpg" alt="Good boy Dubs, a happy and fluffy malamute, has a purple W bandana around his neck and his mouth open in a smile">
-		
+
 										<pre><code class="language-css">img {
 	width: 100%;
 	height: auto;
@@ -338,14 +338,14 @@ h1, h2, h3, h4, h5, h6 {
 }</code></pre>
 									</div>
 								</div>
-		
+
 								<p>Getting into video, iframes in particular, is where things have traditionally been annoying and frustrating to wrangle. With aspect-ratio, you can ensure your video is always the same aspect ratio regardless if the window or screen size.</p>
-		
+
 								<div class="row gap">
 									<div class="col example pink">
 										<h3>Normal YouTube embed - fixed width & height</h3>
 										<iframe width="560" height="315" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		
+
 										<pre><code class="language-html">&lt;iframe width="560" height="315"
 src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
 title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
@@ -353,7 +353,7 @@ title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 									<div class="col example pink ar-2">
 										<h3>YouTube embed with fixed width and aspect ratio 1/1</h3>
 										<iframe width="500" src="https://www.youtube.com/embed/3Mcm4ko6Mgw" title="YouTube video player"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		
+
 										<pre><code class="language-html">&lt;iframe width="500"
 src="https://www.youtube.com/embed/3Mcm4ko6Mgw"
 title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
@@ -361,7 +361,7 @@ title="YouTube video player"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code class="language-css">iframe {
 	aspect-ratio: 1 / 1;
 }</code></pre>
-		
+
 									</div>
 									<div class="col example pink ar-1">
 										<h3>YouTube embed with aspect ratio 16/9</h3>
